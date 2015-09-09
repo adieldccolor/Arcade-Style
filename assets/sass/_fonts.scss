@@ -1,0 +1,59 @@
+$WhitneyBook: "WhitneyBook", serif;
+$WhitneyBookItalic: "WhitneyBookItalic", serif;
+$WhitneyMedium: "WhitneyMedium", serif;
+$WhitneyMediumItalic: "WhitneyMediumItalic", serif;
+$WhitneySemiBold: "WhitneySemiBold", serif;
+
+
+@font-face {
+  font-family: 'WhitneyBook';
+  src: url('../fonts/WhitneyBook.eot');
+  src: url('../fonts/WhitneyBook.eot') format('embedded-opentype'),
+  url('../fonts/WhitneyBook.woff2') format('woff2'),
+  url('../fonts/WhitneyBook.woff') format('woff'),
+  url('../fonts/WhitneyBook.ttf') format('truetype'),
+  url('../fonts/WhitneyBook.svg#WhitneyBook') format('svg');
+}
+
+
+@font-face {
+  font-family: 'WhitneyBookItalic';
+  src: url('../WhitneyBookItalic.eot');
+  src: url('../WhitneyBookItalic.eot') format('embedded-opentype'),
+  url('../WhitneyBookItalic.woff2') format('woff2'),
+  url('../WhitneyBookItalic.woff') format('woff'),
+  url('../WhitneyBookItalic.ttf') format('truetype'),
+  url('../WhitneyBookItalic.svg#WhitneyBookItalic') format('svg');
+}
+
+
+@font-face {
+  font-family: 'WhitneyMedium';
+  src: url('../WhitneyMedium.eot');
+  src: url('../WhitneyMedium.eot') format('embedded-opentype'),
+  url('../WhitneyMedium.woff2') format('woff2'),
+  url('../WhitneyMedium.woff') format('woff'),
+  url('../WhitneyMedium.ttf') format('truetype'),
+  url('../WhitneyMedium.svg#WhitneyMedium') format('svg');
+}
+
+
+@font-face {
+  font-family: 'WhitneyMediumItalic';
+  src: url('../WhitneyMediumItalic.eot');
+  src: url('../WhitneyMediumItalic.eot') format('embedded-opentype'),
+  url('../WhitneyMediumItalic.woff2') format('woff2'),
+  url('../WhitneyMediumItalic.woff') format('woff'),
+  url('../WhitneyMediumItalic.ttf') format('truetype'),
+  url('../WhitneyMediumItalic.svg#WhitneyMediumItalic') format('svg');
+}
+
+@font-face {
+  font-family: 'WhitneySemiBold';
+  src: url('../WhitneySemiBold.eot');
+  src: url('../WhitneySemiBold.eot') format('embedded-opentype'),
+  url('../WhitneySemiBold.woff2') format('woff2'),
+  url('../WhitneySemiBold.woff') format('woff'),
+  url('../WhitneySemiBold.ttf') format('truetype'),
+  url('../WhitneySemiBold.svg#WhitneySemiBold') format('svg');
+}
