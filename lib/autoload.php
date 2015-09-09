@@ -20,7 +20,19 @@ class Template{
 
     public static function getPage(){
         global $routes;
-        include "views/index.html";
+
+        if( get("page") == false ){
+            include "views/index.html";
+            return false;
+        }
+
+        $page = get("page");
+        if( !in_array($page, $routes) || !file_exists("views/" . $page . ".html") ){
+            echo "<pre>This page does not exist</pre>";
+            return false;
+        }
+
+        include "views/" . $page . ".html";
     }
 
 }
@@ -31,6 +43,10 @@ class Template{
 function asset($file){
     if( $file[0] != "/" ) $file = "/" . $file;
     return "assets" . $file;
+}
+
+function get($var){
+    return isset($_GET[$var]) ? $_GET[$var] : false;
 }
 
 function url($url){
