@@ -50,3 +50,9 @@ h1, .h1 {
   font-size: 8em;
   line-height: 0.95em;
   color: #510B76; }
+
+h2, .h2 {
+  font-family: "WhitneyBook", serif;
+  font-size: 5.2em;
+  line-height: 1em;
+  color: #510B76; }
