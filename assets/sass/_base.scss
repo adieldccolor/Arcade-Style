@@ -1,14 +1,28 @@
 /*
-File: base styles
-Contents:
+****************************************
+CONTENTS
+a. TYPOGRAPHY
+b. BUTTONS & LINKS
+c. ARROWS & DIVIDERS
+****************************************
+*/
+
+
+/*
+****************************************
+SECTION: TYPOGRAPHY
 1. Global Styles
 2. Headings
 3. Subheadings
-
+4. Body text
 ***************************************
 */
 
 
+$font-size: 10px;
+.__base-font-size{
+  font-size: $font-size;
+}
 
 
 
@@ -18,7 +32,7 @@ Contents:
 ******************************************
 */
 body{
-  font-size: 10px;
+  font-size: $font-size;
 }
 
 
@@ -34,9 +48,19 @@ body{
 */
 h1, .h1{
   font-family: $WhitneyBook;
+  color: #510B76;
   font-size: 8em;
   line-height: 0.95em;
-  color: #510B76;
+
+  @include mq('medium'){
+    font-size: 7em;
+  }
+  @include mq('small'){
+    font-size: 5em;
+  }
+  @include mq('mobile'){
+    font-size: 4em;
+  }
 }
 
 h2, .h2{
@@ -44,6 +68,16 @@ h2, .h2{
   font-size: 5.2em;
   line-height: 1em;
   color: #510B76;
+
+  @include mq('medium'){
+    font-size: 4.5em;
+  }
+  @include mq('small'){
+    font-size: 4em;
+  }
+  @include mq('mobile'){
+    font-size: 3.2em;
+  }
 }
 
 h3, .h3{
@@ -51,5 +85,278 @@ h3, .h3{
   font-size: 4.2em;
   line-height: 1.1em;
   color: #510B76;
+
+  @include mq('medium'){
+    font-size: 3.9em;
+  }
+  @include mq('small'){
+    font-size: 3.5em;
+  }
+  @include mq('mobile'){
+    font-size: 3.2em;
+  }
 }
 
+
+
+
+
+
+
+
+
+
+
+/*
+******************************************
+** 3. Subheadings
+******************************************
+*/
+h1, .h1, h2, .h2, h3, .h3, span, i, div, a{
+  &.__sub1, &.__sub2, &.__sub3, &.__sub4{
+    font-size: $font-size;
+  }
+
+  &.__sub1{
+    font-family: $WhitneyMedium;
+    font-size: 2.2em;
+    line-height: 1.2em;
+
+    @include mq('medium'){
+      font-size: 2em;
+    }
+    @include mq('small'){
+      font-size: 1.9em;
+    }
+    @include mq('mobile'){
+      font-size: 1.8em;
+    }
+  }
+
+  &.__sub2{
+    font-family: $WhitneyMedium;
+    font-size: 1.8em;
+    line-height: 1.5em;
+
+    @include mq('small'){
+      font-size: 1.7em;
+    }
+    @include mq('mobile'){
+      font-size: 1.6em;
+    }
+  }
+
+  &.__sub3{
+    font-family: $WhitneySemiBold;
+    font-size: 1.6em;
+    color: #b7b7b7;
+  }
+
+  .__sub4{
+    font-family: $WhitneyMedium;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    letter-spacing: 0.01em;
+    color: #666;
+
+    @include mq('medium'){
+      font-size: 1.1em;
+    }
+    @include mq('small'){
+      font-size: 1em;
+    }
+    @include mq('x-mobile'){
+      font-size: 0.8em;
+    }
+  }
+}
+
+/*
+Inverse color
+*/
+.__inverse{
+  h1, .h1, h2, .h2, h3, .h3, span, i, div, a{
+    color: #fff;
+    &.__sub1, &.__sub2{
+      color: #fff;
+    }
+  }
+}
+
+
+
+
+
+
+/*
+******************************************
+** 4. Body text
+******************************************
+*/
+@mixin bodyText1(){
+  font-family: $WhitneyBook;
+  @extend .__base-font-size;
+  font-size: 1.8em;
+  line-height: 1.55em;
+  color: #666;
+
+  @include mq('small'){
+    font-size: 1.7em;
+  }
+  @include mq('mobile'){
+    font-size: 1.6em;
+  }
+}
+
+@mixin bodyText2(){
+  font-family: $WhitneyMedium;
+  @extend .__base-font-size;
+  font-size: 1.8em;
+  line-height: 1.55em;
+  color: #b7b7b7;
+
+  @include mq('small'){
+    font-size: 1.7em;
+  }
+  @include mq('mobile'){
+    font-size: 1.6em;
+  }
+}
+
+@mixin bodyText3(){
+  font-family: $WhitneyBook;
+  @extend .__base-font-size;
+  font-size: 1.6em;
+  line-height: 1.4em;
+  color: #666;
+}
+
+
+.__body--text1{
+  @include bodyText1();
+}
+
+.__body--text2{
+  @include bodyText2();
+}
+
+.__body--text3{
+  @include bodyText3();
+}
+
+
+
+
+/*
+****************************************
+SECTION: BUTTONS & LINKS
+1. Buttons
+2. Links
+***************************************
+*/
+
+
+
+/*
+******************************************
+** 1. Buttons
+******************************************
+*/
+
+.button, a.button, span.button{
+  font-family: $WhitneyMedium;
+  font-size: $font-size;
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background-color: #510B76;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding: 0 5px;
+  border: 1px solid #510B76;
+  text-decoration: none;
+  outline: none;
+
+  &.__stroked{
+    background-color: transparent;
+    color: #510B76;
+  }
+}
+
+
+
+/*
+******************************************
+** 2. Links
+******************************************
+*/
+a{
+  color: #510B76;
+  text-decoration: none;
+  &:hover, &:focus{
+    color: #510B76;
+  }
+}
+
+a.__link1, .__link1, a.__link2, .__link2, a.__link3, .__link3{
+  font-size: $font-size;
+}
+
+a.__link1, .__link1{
+  font-family: $WhitneyBookItalic;
+  font-size: 1.8em;
+}
+
+a.__link2, .__link2{
+  font-family: $WhitneyBookItalic;
+  font-size: 1.6em;
+}
+
+a.__link3, .__link3{
+  font-family: $WhitneyBookItalic;
+  font-size: 1.6em;
+  color: #AAA;
+  text-decoration: underline;
+  &:hover, &:focus{
+    color: #AAA;
+  }
+}
+
+&.__inverse{
+  a.__link1, .__link1, a.__link2, .__link2{
+    color: #fff;
+  }
+}
+
+
+
+/*
+****************************************
+SECTION: ARROWS & DIVIDERS
+1. Arrows
+2. Dividers
+***************************************
+*/
+
+/*
+******************************************
+** 1. Arrows
+******************************************
+*/
+
+
+/*
+******************************************
+** 2. Dividers
+******************************************
+*/
+.divider{
+  height: 1px;
+  background-color: #DFDFDF;
+
+  &.__secondary{
+    background-color: #c7c7c7;
+  }
+}

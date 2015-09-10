@@ -5,33 +5,44 @@
 
 @font-face {
   font-family: 'WhitneyBookItalic';
-  src: url("../WhitneyBookItalic.eot");
-  src: url("../WhitneyBookItalic.eot") format("embedded-opentype"), url("../WhitneyBookItalic.woff2") format("woff2"), url("../WhitneyBookItalic.woff") format("woff"), url("../WhitneyBookItalic.ttf") format("truetype"), url("../WhitneyBookItalic.svg#WhitneyBookItalic") format("svg"); }
+  src: url("../fonts/WhitneyBookItalic.eot");
+  src: url("../fonts/WhitneyBookItalic.eot") format("embedded-opentype"), url("../fonts/WhitneyBookItalic.woff2") format("woff2"), url("../fonts/WhitneyBookItalic.woff") format("woff"), url("../fonts/WhitneyBookItalic.ttf") format("truetype"), url("../fonts/WhitneyBookItalic.svg#WhitneyBookItalic") format("svg"); }
 
 @font-face {
   font-family: 'WhitneyMedium';
-  src: url("../WhitneyMedium.eot");
-  src: url("../WhitneyMedium.eot") format("embedded-opentype"), url("../WhitneyMedium.woff2") format("woff2"), url("../WhitneyMedium.woff") format("woff"), url("../WhitneyMedium.ttf") format("truetype"), url("../WhitneyMedium.svg#WhitneyMedium") format("svg"); }
+  src: url("../fonts/WhitneyMedium.eot");
+  src: url("../fonts/WhitneyMedium.eot") format("embedded-opentype"), url("../fonts/WhitneyMedium.woff2") format("woff2"), url("../fonts/WhitneyMedium.woff") format("woff"), url("../fonts/WhitneyMedium.ttf") format("truetype"), url("../fonts/WhitneyMedium.svg#WhitneyMedium") format("svg"); }
 
 @font-face {
   font-family: 'WhitneyMediumItalic';
-  src: url("../WhitneyMediumItalic.eot");
-  src: url("../WhitneyMediumItalic.eot") format("embedded-opentype"), url("../WhitneyMediumItalic.woff2") format("woff2"), url("../WhitneyMediumItalic.woff") format("woff"), url("../WhitneyMediumItalic.ttf") format("truetype"), url("../WhitneyMediumItalic.svg#WhitneyMediumItalic") format("svg"); }
+  src: url("../fonts/WhitneyMediumItalic.eot");
+  src: url("../fonts/WhitneyMediumItalic.eot") format("embedded-opentype"), url("../fonts/WhitneyMediumItalic.woff2") format("woff2"), url("../fonts/WhitneyMediumItalic.woff") format("woff"), url("../fonts/WhitneyMediumItalic.ttf") format("truetype"), url("../fonts/WhitneyMediumItalic.svg#WhitneyMediumItalic") format("svg"); }
 
 @font-face {
   font-family: 'WhitneySemiBold';
-  src: url("../WhitneySemiBold.eot");
-  src: url("../WhitneySemiBold.eot") format("embedded-opentype"), url("../WhitneySemiBold.woff2") format("woff2"), url("../WhitneySemiBold.woff") format("woff"), url("../WhitneySemiBold.ttf") format("truetype"), url("../WhitneySemiBold.svg#WhitneySemiBold") format("svg"); }
+  src: url("../fonts/WhitneySemiBold.eot");
+  src: url("../fonts/WhitneySemiBold.eot") format("embedded-opentype"), url("../fonts/WhitneySemiBold.woff2") format("woff2"), url("../fonts/WhitneySemiBold.woff") format("woff"), url("../fonts/WhitneySemiBold.ttf") format("truetype"), url("../fonts/WhitneySemiBold.svg#WhitneySemiBold") format("svg"); }
 
 /*
-File: base styles
-Contents:
+****************************************
+CONTENTS
+a. TYPOGRAPHY
+b. BUTTONS & LINKS
+c. ARROWS & DIVIDERS
+****************************************
+*/
+/*
+****************************************
+SECTION: TYPOGRAPHY
 1. Global Styles
 2. Headings
 3. Subheadings
-
+4. Body text
 ***************************************
 */
+.__base-font-size, .__body--text1, .__body--text2, .__body--text3 {
+  font-size: 10px; }
+
 /*
 ******************************************
 ** 1. Global Styles
@@ -47,18 +58,266 @@ body {
 */
 h1, .h1 {
   font-family: "WhitneyBook", serif;
+  color: #510B76;
   font-size: 8em;
-  line-height: 0.95em;
-  color: #510B76; }
+  line-height: 0.95em; }
+  @media (max-width: 1200px) {
+    h1, .h1 {
+      font-size: 7em; } }
+  @media (max-width: 992px) {
+    h1, .h1 {
+      font-size: 5em; } }
+  @media (max-width: 768px) {
+    h1, .h1 {
+      font-size: 4em; } }
 
 h2, .h2 {
   font-family: "WhitneyBook", serif;
   font-size: 5.2em;
   line-height: 1em;
   color: #510B76; }
+  @media (max-width: 1200px) {
+    h2, .h2 {
+      font-size: 4.5em; } }
+  @media (max-width: 992px) {
+    h2, .h2 {
+      font-size: 4em; } }
+  @media (max-width: 768px) {
+    h2, .h2 {
+      font-size: 3.2em; } }
 
 h3, .h3 {
   font-family: "WhitneyBook", serif;
   font-size: 4.2em;
   line-height: 1.1em;
   color: #510B76; }
+  @media (max-width: 1200px) {
+    h3, .h3 {
+      font-size: 3.9em; } }
+  @media (max-width: 992px) {
+    h3, .h3 {
+      font-size: 3.5em; } }
+  @media (max-width: 768px) {
+    h3, .h3 {
+      font-size: 3.2em; } }
+
+/*
+******************************************
+** 3. Subheadings
+******************************************
+*/
+h1.__sub1, h1.__sub2, h1.__sub3, h1.__sub4, .h1.__sub1, .h1.__sub2, .h1.__sub3, .h1.__sub4, h2.__sub1, h2.__sub2, h2.__sub3, h2.__sub4, .h2.__sub1, .h2.__sub2, .h2.__sub3, .h2.__sub4, h3.__sub1, h3.__sub2, h3.__sub3, h3.__sub4, .h3.__sub1, .h3.__sub2, .h3.__sub3, .h3.__sub4, span.__sub1, span.__sub2, span.__sub3, span.__sub4, i.__sub1, i.__sub2, i.__sub3, i.__sub4, div.__sub1, div.__sub2, div.__sub3, div.__sub4, a.__sub1, a.__sub2, a.__sub3, a.__sub4 {
+  font-size: 10px; }
+
+h1.__sub1, .h1.__sub1, h2.__sub1, .h2.__sub1, h3.__sub1, .h3.__sub1, span.__sub1, i.__sub1, div.__sub1, a.__sub1 {
+  font-family: "WhitneyMedium", serif;
+  font-size: 2.2em;
+  line-height: 1.2em; }
+  @media (max-width: 1200px) {
+    h1.__sub1, .h1.__sub1, h2.__sub1, .h2.__sub1, h3.__sub1, .h3.__sub1, span.__sub1, i.__sub1, div.__sub1, a.__sub1 {
+      font-size: 2em; } }
+  @media (max-width: 992px) {
+    h1.__sub1, .h1.__sub1, h2.__sub1, .h2.__sub1, h3.__sub1, .h3.__sub1, span.__sub1, i.__sub1, div.__sub1, a.__sub1 {
+      font-size: 1.9em; } }
+  @media (max-width: 768px) {
+    h1.__sub1, .h1.__sub1, h2.__sub1, .h2.__sub1, h3.__sub1, .h3.__sub1, span.__sub1, i.__sub1, div.__sub1, a.__sub1 {
+      font-size: 1.8em; } }
+
+h1.__sub2, .h1.__sub2, h2.__sub2, .h2.__sub2, h3.__sub2, .h3.__sub2, span.__sub2, i.__sub2, div.__sub2, a.__sub2 {
+  font-family: "WhitneyMedium", serif;
+  font-size: 1.8em;
+  line-height: 1.5em; }
+  @media (max-width: 992px) {
+    h1.__sub2, .h1.__sub2, h2.__sub2, .h2.__sub2, h3.__sub2, .h3.__sub2, span.__sub2, i.__sub2, div.__sub2, a.__sub2 {
+      font-size: 1.7em; } }
+  @media (max-width: 768px) {
+    h1.__sub2, .h1.__sub2, h2.__sub2, .h2.__sub2, h3.__sub2, .h3.__sub2, span.__sub2, i.__sub2, div.__sub2, a.__sub2 {
+      font-size: 1.6em; } }
+
+h1.__sub3, .h1.__sub3, h2.__sub3, .h2.__sub3, h3.__sub3, .h3.__sub3, span.__sub3, i.__sub3, div.__sub3, a.__sub3 {
+  font-family: "WhitneySemiBold", serif;
+  font-size: 1.6em;
+  color: #b7b7b7; }
+
+h1 .__sub4, .h1 .__sub4, h2 .__sub4, .h2 .__sub4, h3 .__sub4, .h3 .__sub4, span .__sub4, i .__sub4, div .__sub4, a .__sub4 {
+  font-family: "WhitneyMedium", serif;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  letter-spacing: 0.01em;
+  color: #666; }
+  @media (max-width: 1200px) {
+    h1 .__sub4, .h1 .__sub4, h2 .__sub4, .h2 .__sub4, h3 .__sub4, .h3 .__sub4, span .__sub4, i .__sub4, div .__sub4, a .__sub4 {
+      font-size: 1.1em; } }
+  @media (max-width: 992px) {
+    h1 .__sub4, .h1 .__sub4, h2 .__sub4, .h2 .__sub4, h3 .__sub4, .h3 .__sub4, span .__sub4, i .__sub4, div .__sub4, a .__sub4 {
+      font-size: 1em; } }
+  @media (max-width: 480px) {
+    h1 .__sub4, .h1 .__sub4, h2 .__sub4, .h2 .__sub4, h3 .__sub4, .h3 .__sub4, span .__sub4, i .__sub4, div .__sub4, a .__sub4 {
+      font-size: 0.8em; } }
+
+/*
+Inverse color
+*/
+.__inverse h1, .__inverse .h1, .__inverse h2, .__inverse .h2, .__inverse h3, .__inverse .h3, .__inverse span, .__inverse i, .__inverse div, .__inverse a {
+  color: #fff; }
+  .__inverse h1.__sub1, .__inverse h1.__sub2, .__inverse .h1.__sub1, .__inverse .h1.__sub2, .__inverse h2.__sub1, .__inverse h2.__sub2, .__inverse .h2.__sub1, .__inverse .h2.__sub2, .__inverse h3.__sub1, .__inverse h3.__sub2, .__inverse .h3.__sub1, .__inverse .h3.__sub2, .__inverse span.__sub1, .__inverse span.__sub2, .__inverse i.__sub1, .__inverse i.__sub2, .__inverse div.__sub1, .__inverse div.__sub2, .__inverse a.__sub1, .__inverse a.__sub2 {
+    color: #fff; }
+
+/*
+******************************************
+** 4. Body text
+******************************************
+*/
+.__body--text1 {
+  font-family: "WhitneyBook", serif;
+  font-size: 1.8em;
+  line-height: 1.55em;
+  color: #666; }
+  @media (max-width: 992px) {
+    .__body--text1 {
+      font-size: 1.7em; } }
+  @media (max-width: 768px) {
+    .__body--text1 {
+      font-size: 1.6em; } }
+
+.__body--text2 {
+  font-family: "WhitneyMedium", serif;
+  font-size: 1.8em;
+  line-height: 1.55em;
+  color: #b7b7b7; }
+  @media (max-width: 992px) {
+    .__body--text2 {
+      font-size: 1.7em; } }
+  @media (max-width: 768px) {
+    .__body--text2 {
+      font-size: 1.6em; } }
+
+.__body--text3 {
+  font-family: "WhitneyBook", serif;
+  font-size: 1.6em;
+  line-height: 1.4em;
+  color: #666; }
+
+/*
+****************************************
+SECTION: BUTTONS & LINKS
+1. Buttons
+2. Links
+***************************************
+*/
+/*
+******************************************
+** 1. Buttons
+******************************************
+*/
+.button, a.button, span.button {
+  font-family: "WhitneyMedium", serif;
+  font-size: 10px;
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background-color: #510B76;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding: 0 5px;
+  border: 1px solid #510B76;
+  text-decoration: none;
+  outline: none; }
+  .button.__stroked, a.button.__stroked, span.button.__stroked {
+    background-color: transparent;
+    color: #510B76; }
+
+/*
+******************************************
+** 2. Links
+******************************************
+*/
+a {
+  color: #510B76;
+  text-decoration: none; }
+  a:hover, a:focus {
+    color: #510B76; }
+
+a.__link1, .__link1, a.__link2, .__link2, a.__link3, .__link3 {
+  font-size: 10px; }
+
+a.__link1, .__link1 {
+  font-family: "WhitneyBookItalic", serif;
+  font-size: 1.8em; }
+
+a.__link2, .__link2 {
+  font-family: "WhitneyBookItalic", serif;
+  font-size: 1.6em; }
+
+a.__link3, .__link3 {
+  font-family: "WhitneyBookItalic", serif;
+  font-size: 1.6em;
+  color: #AAA;
+  text-decoration: underline; }
+  a.__link3:hover, a.__link3:focus, .__link3:hover, .__link3:focus {
+    color: #AAA; }
+
+.__inverse a.__link1, .__inverse .__link1, .__inverse a.__link2, .__inverse .__link2 {
+  color: #fff; }
+
+/*
+****************************************
+SECTION: ARROWS & DIVIDERS
+1. Arrows
+2. Dividers
+***************************************
+*/
+/*
+******************************************
+** 1. Arrows
+******************************************
+*/
+/*
+******************************************
+** 2. Dividers
+******************************************
+*/
+.divider {
+  height: 1px;
+  background-color: #DFDFDF; }
+  .divider.__secondary {
+    background-color: #c7c7c7; }
+
+nav {
+  border-bottom: 1px solid #DFDFDF;
+  background-color: #fff;
+  height: 100px;
+  /*
+  *************************
+   Media queries
+  *************************
+  */ }
+  nav .brand-logo {
+    float: left;
+    margin: 10px 0;
+    height: 80px; }
+    nav .brand-logo img {
+      height: 80px; }
+  nav.__sticky {
+    height: 80px; }
+    nav.__sticky .brand-logo {
+      height: 60px; }
+      nav.__sticky .brand-logo img {
+        height: 60px; }
+  @media (max-width: 992px) {
+    nav {
+      height: 68px; }
+      nav .brand-logo {
+        margin: 8px 0;
+        height: 52px; }
+        nav .brand-logo img {
+          height: 52px; }
+      nav.__sticky {
+        height: 68px; }
+        nav.__sticky .brand-logo {
+          margin: 8px 0;
+          height: 52px; }
+          nav.__sticky .brand-logo img {
+            height: 52px; } }

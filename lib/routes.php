@@ -2,5 +2,6 @@
 
 $routes = array(
     "index",
+    "ui",
     "about"
 );

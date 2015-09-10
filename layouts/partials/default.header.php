@@ -7,3 +7,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+
+<nav>
+    <div class="container">
+        <span class="brand-logo">
+            <a href="<?php echo get_page_url("index"); ?>"><img src="assets/images/logotype.png" alt="Arcade Beauty" /></a>
+        </span>
+    </div>
+</nav>

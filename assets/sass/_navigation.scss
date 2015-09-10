@@ -1,0 +1,58 @@
+
+
+nav{
+  border-bottom: 1px solid #DFDFDF;
+  background-color: #fff;
+  height: 100px;
+
+  .brand-logo{
+    float: left;
+    margin: 10px 0;
+    height: 80px;
+
+    img{
+      height: 80px;
+    }
+  }
+
+  &.__sticky{
+    height: 80px;
+
+    .brand-logo{
+      height: 60px;
+      img{
+        height: 60px;
+      }
+    }
+  }
+
+
+  /*
+  *************************
+   Media queries
+  *************************
+  */
+  @include mq('small'){
+    height: 68px;
+
+    .brand-logo{
+      margin: 8px 0;
+      height: 52px;
+      img{
+        height: 52px;
+      }
+    }
+
+    &.__sticky{
+      height: 68px;
+
+      .brand-logo{
+        margin: 8px 0;
+        height: 52px;
+        img{
+          height: 52px;
+        }
+      }
+    }
+  }
+}
