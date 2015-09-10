@@ -1,3 +1,48 @@
+/*
+*****************************
+**** ICONS FONT
+*****************************
+*/
+@font-face {
+  font-family: 'AS-icon';
+  src: url("../fonts/AS-icon.eot?-7h0m6l");
+  src: url("../fonts/AS-icon.eot?#iefix-7h0m6l") format("embedded-opentype"), url("../fonts/AS-icon.ttf?-7h0m6l") format("truetype"), url("../fonts/AS-icon.woff?-7h0m6l") format("woff"), url("../fonts/AS-icon.svg?-7h0m6l#AS-icon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+i {
+  font-family: 'AS-icon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-left-arrow:before {
+  content: "\e600"; }
+
+.icon-right-arrow:before {
+  content: "\e601"; }
+
+.icon-small-right-arrow:before {
+  content: "\e602"; }
+
+.icon-magnify:before {
+  content: "\e603"; }
+
+.icon-lines-nav:before {
+  content: "\e604"; }
+
+.icon-close-nav:before {
+  content: "\e605"; }
+
+.icon-carret-down:before {
+  content: "\e606"; }
+
 @font-face {
   font-family: 'WhitneyBook';
   src: url("../fonts/WhitneyBook.eot");
@@ -225,9 +270,13 @@ SECTION: BUTTONS & LINKS
   border: 1px solid #510B76;
   text-decoration: none;
   outline: none; }
+  .button:hover, .button:focus, a.button:hover, a.button:focus, span.button:hover, span.button:focus {
+    color: #fff; }
   .button.__stroked, a.button.__stroked, span.button.__stroked {
     background-color: transparent;
     color: #510B76; }
+    .button.__stroked:hover, .button.__stroked:focus, a.button.__stroked:hover, a.button.__stroked:focus, span.button.__stroked:hover, span.button.__stroked:focus {
+      color: #510B76; }
 
 /*
 ******************************************
@@ -285,10 +334,25 @@ SECTION: ARROWS & DIVIDERS
   .divider.__secondary {
     background-color: #c7c7c7; }
 
+/*
+*****************************
+**** NAVIGATION
+*****************************
+*/
 nav {
   border-bottom: 1px solid #DFDFDF;
   background-color: #fff;
   height: 100px;
+  /*
+  ************************
+  *** Brand Logo
+  ************************
+  */
+  /*
+  ************************
+  *** NAVIGATION BUTTONS
+  ************************
+  */
   /*
   *************************
    Media queries
@@ -300,12 +364,67 @@ nav {
     height: 80px; }
     nav .brand-logo img {
       height: 80px; }
+  nav .navigation-buttons {
+    float: right;
+    margin: 30px 0; }
+    nav .navigation-buttons ul {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      nav .navigation-buttons ul li {
+        float: left;
+        margin-left: 30px;
+        height: 40px;
+        font-size: 10px; }
+        nav .navigation-buttons ul li.nav-divider {
+          height: 50px;
+          margin: -5px 0px -5px 30px;
+          width: 1px;
+          background-color: #DFDFDF; }
+        nav .navigation-buttons ul li i {
+          vertical-align: middle; }
+        nav .navigation-buttons ul li a {
+          text-decoration: none; }
+        nav .navigation-buttons ul li .button {
+          width: 150px; }
+        nav .navigation-buttons ul li .search-button {
+          font-size: 2.8em;
+          line-height: 40px; }
+          @media (max-width: 768px) {
+            nav .navigation-buttons ul li .search-button {
+              font-size: 2.3em; } }
+        nav .navigation-buttons ul li .menu-button {
+          font-family: "WhitneyMedium", serif;
+          font-size: 1.3em;
+          color: #868686;
+          letter-spacing: 0;
+          line-height: 40px; }
+          nav .navigation-buttons ul li .menu-button .nav-icon i {
+            font-size: 1.6em; }
+            @media (max-width: 768px) {
+              nav .navigation-buttons ul li .menu-button .nav-icon i {
+                font-size: 1.4em; } }
+          nav .navigation-buttons ul li .menu-button .menu-button-text {
+            margin-left: 8px;
+            letter-spacing: 0.05em; }
+            @media (max-width: 992px) {
+              nav .navigation-buttons ul li .menu-button .menu-button-text {
+                display: none;
+                margin-left: 0; } }
+    @media (max-width: 992px) {
+      nav .navigation-buttons {
+        margin: 14px 0; } }
   nav.__sticky {
     height: 80px; }
     nav.__sticky .brand-logo {
       height: 60px; }
       nav.__sticky .brand-logo img {
         height: 60px; }
+    nav.__sticky .navigation-buttons {
+      margin: 20px 0; }
+      @media (max-width: 992px) {
+        nav.__sticky .navigation-buttons {
+          margin: 14px 0; } }
   @media (max-width: 992px) {
     nav {
       height: 68px; }

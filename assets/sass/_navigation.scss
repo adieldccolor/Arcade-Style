@@ -1,10 +1,19 @@
-
+/*
+*****************************
+**** NAVIGATION
+*****************************
+*/
 
 nav{
   border-bottom: 1px solid #DFDFDF;
   background-color: #fff;
   height: 100px;
 
+  /*
+  ************************
+  *** Brand Logo
+  ************************
+  */
   .brand-logo{
     float: left;
     margin: 10px 0;
@@ -15,6 +24,96 @@ nav{
     }
   }
 
+
+
+  /*
+  ************************
+  *** NAVIGATION BUTTONS
+  ************************
+  */
+  .navigation-buttons{
+    float: right;
+    margin: 30px 0;
+
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li{
+        float: left;
+        margin-left: 30px;
+        height: 40px;
+        font-size: 10px;
+
+        &.nav-divider{
+          height: 50px;
+          margin: -5px 0px -5px 30px;
+          width: 1px;
+          background-color: #DFDFDF;
+        }
+
+        i{
+          vertical-align: middle;
+        }
+
+        a{
+          text-decoration: none;
+        }
+
+        .button{
+          width: 150px;
+        }
+
+        .search-button{
+          font-size: 2.8em;
+          line-height: 40px;
+
+          @include mq('mobile'){
+            font-size: 2.3em;
+          }
+        }
+
+        .menu-button{
+          font-family: $WhitneyMedium;
+          font-size: 1.3em;
+          color: #868686;
+          letter-spacing: 0;
+          line-height: 40px;
+
+          .nav-icon{
+            i{
+              font-size: 1.6em;
+
+              @include mq('mobile'){
+                font-size: 1.4em;
+              }
+            }
+          }
+
+          .menu-button-text{
+            margin-left: 8px;
+            letter-spacing: 0.05em;
+
+            @include mq('small'){
+              display: none;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+
+
+    @include mq('small'){
+      margin: 14px 0;
+    }
+  }
+
+
+
+
+
+
   &.__sticky{
     height: 80px;
 
@@ -24,6 +123,15 @@ nav{
         height: 60px;
       }
     }
+
+    .navigation-buttons{
+      margin: 20px 0;
+
+      @include mq('small'){
+        margin: 14px 0;
+      }
+    }
+
   }
 
 

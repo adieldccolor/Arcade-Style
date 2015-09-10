@@ -1,0 +1,52 @@
+/*
+*****************************
+**** ICONS FONT
+*****************************
+*/
+
+@font-face {
+  font-family: 'AS-icon';
+  src:url('../fonts/AS-icon.eot?-7h0m6l');
+  src:url('../fonts/AS-icon.eot?#iefix-7h0m6l') format('embedded-opentype'),
+  url('../fonts/AS-icon.ttf?-7h0m6l') format('truetype'),
+  url('../fonts/AS-icon.woff?-7h0m6l') format('woff'),
+  url('../fonts/AS-icon.svg?-7h0m6l#AS-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i {
+  font-family: 'AS-icon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-left-arrow:before {
+  content: "\e600";
+}
+.icon-right-arrow:before {
+  content: "\e601";
+}
+.icon-small-right-arrow:before {
+  content: "\e602";
+}
+.icon-magnify:before {
+  content: "\e603";
+}
+.icon-lines-nav:before {
+  content: "\e604";
+}
+.icon-close-nav:before {
+  content: "\e605";
+}
+.icon-carret-down:before {
+  content: "\e606";
+}

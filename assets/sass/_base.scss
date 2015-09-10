@@ -279,9 +279,16 @@ SECTION: BUTTONS & LINKS
   text-decoration: none;
   outline: none;
 
+  &:hover, &:focus{
+    color: #fff;
+  }
+
   &.__stroked{
     background-color: transparent;
     color: #510B76;
+    &:hover, &:focus{
+      color: #510B76;
+    }
   }
 }
 
