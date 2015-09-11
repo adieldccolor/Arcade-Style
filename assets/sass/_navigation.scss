@@ -4,10 +4,11 @@
 *****************************
 */
 
-nav{
+nav.__navigation, .__navigation{
   border-bottom: 1px solid #DFDFDF;
   background-color: #fff;
   height: 100px;
+  position: relative;
 
   /*
   ************************
@@ -81,16 +82,23 @@ nav{
           line-height: 40px;
 
           .nav-icon{
+            color: #868686;
+
             i{
               font-size: 1.6em;
-
               @include mq('mobile'){
                 font-size: 1.4em;
               }
             }
+
+            &.__close-icon{
+              i{
+                font-size: 2em;
+              }
+            }
           }
 
-          .menu-button-text{
+          .menu-button-text.__text-open{
             margin-left: 8px;
             letter-spacing: 0.05em;
 
@@ -164,3 +172,90 @@ nav{
     }
   }
 }
+
+
+
+
+
+/*
+*****************************************
+**** NAVIGATION DRAWER
+*****************************************
+*/
+.drawer-arcade-style{
+  border-left: 1px solid #DFDFDF;
+  background-color: #fff;
+  width: 100%;
+  max-width: 320px;
+
+  @include mq('x-mobile'){
+    max-width: 100%;
+  }
+
+  .__navigation, .__drawer-navigation{
+    border: none;
+    padding: 0 25px 0 35px;
+  }
+
+  .__drawer-navigation{
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      a{
+        font-size: $font-size;
+      }
+    }
+
+    > ul{
+      padding-top: 2px;
+      > li{
+        padding: 20px 0;
+        > a{
+          font-family: $WhitneySemiBold;
+          font-size: 1.6em;
+          color: #666666;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          line-height: 0.8em;
+          vertical-align: middle;
+          display: block;
+          text-decoration: none;
+        }
+
+        > ul{
+          padding-top: 5px;
+          > li{
+            > a{
+              display: block;
+              padding: 15px 0;
+              font-family: $WhitneyBookItalic;
+              font-size: 1.6em;
+              color: #666666;
+              line-height: 0.8em;
+              vertical-align: middle;
+            }
+
+            &:last-child{
+              > a{
+                padding-bottom: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.drawer-right .drawer-main{
+  @include mq('x-mobile'){
+    right: -100%;
+  }
+}
+
+.drawer-overlay-upper{
+  background-color: #fff;
+  opacity: 0.3;
+}
+

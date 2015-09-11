@@ -339,10 +339,11 @@ SECTION: ARROWS & DIVIDERS
 **** NAVIGATION
 *****************************
 */
-nav {
+nav.__navigation, .__navigation {
   border-bottom: 1px solid #DFDFDF;
   background-color: #fff;
   height: 100px;
+  position: relative;
   /*
   ************************
   *** Brand Logo
@@ -358,85 +359,146 @@ nav {
    Media queries
   *************************
   */ }
-  nav .brand-logo {
+  nav.__navigation .brand-logo, .__navigation .brand-logo {
     float: left;
     margin: 10px 0;
     height: 80px; }
-    nav .brand-logo img {
+    nav.__navigation .brand-logo img, .__navigation .brand-logo img {
       height: 80px; }
-  nav .navigation-buttons {
+  nav.__navigation .navigation-buttons, .__navigation .navigation-buttons {
     float: right;
     margin: 30px 0; }
-    nav .navigation-buttons ul {
+    nav.__navigation .navigation-buttons ul, .__navigation .navigation-buttons ul {
       margin: 0;
       padding: 0;
       list-style: none; }
-      nav .navigation-buttons ul li {
+      nav.__navigation .navigation-buttons ul li, .__navigation .navigation-buttons ul li {
         float: left;
         margin-left: 30px;
         height: 40px;
         font-size: 10px; }
-        nav .navigation-buttons ul li.nav-divider {
+        nav.__navigation .navigation-buttons ul li.nav-divider, .__navigation .navigation-buttons ul li.nav-divider {
           height: 50px;
           margin: -5px 0px -5px 30px;
           width: 1px;
           background-color: #DFDFDF; }
-        nav .navigation-buttons ul li i {
+        nav.__navigation .navigation-buttons ul li i, .__navigation .navigation-buttons ul li i {
           vertical-align: middle; }
-        nav .navigation-buttons ul li a {
+        nav.__navigation .navigation-buttons ul li a, .__navigation .navigation-buttons ul li a {
           text-decoration: none; }
-        nav .navigation-buttons ul li .button {
+        nav.__navigation .navigation-buttons ul li .button, .__navigation .navigation-buttons ul li .button {
           width: 150px; }
-        nav .navigation-buttons ul li .search-button {
+        nav.__navigation .navigation-buttons ul li .search-button, .__navigation .navigation-buttons ul li .search-button {
           font-size: 2.8em;
           line-height: 40px; }
           @media (max-width: 768px) {
-            nav .navigation-buttons ul li .search-button {
+            nav.__navigation .navigation-buttons ul li .search-button, .__navigation .navigation-buttons ul li .search-button {
               font-size: 2.3em; } }
-        nav .navigation-buttons ul li .menu-button {
+        nav.__navigation .navigation-buttons ul li .menu-button, .__navigation .navigation-buttons ul li .menu-button {
           font-family: "WhitneyMedium", serif;
           font-size: 1.3em;
           color: #868686;
           letter-spacing: 0;
           line-height: 40px; }
-          nav .navigation-buttons ul li .menu-button .nav-icon i {
-            font-size: 1.6em; }
-            @media (max-width: 768px) {
-              nav .navigation-buttons ul li .menu-button .nav-icon i {
-                font-size: 1.4em; } }
-          nav .navigation-buttons ul li .menu-button .menu-button-text {
+          nav.__navigation .navigation-buttons ul li .menu-button .nav-icon, .__navigation .navigation-buttons ul li .menu-button .nav-icon {
+            color: #868686; }
+            nav.__navigation .navigation-buttons ul li .menu-button .nav-icon i, .__navigation .navigation-buttons ul li .menu-button .nav-icon i {
+              font-size: 1.6em; }
+              @media (max-width: 768px) {
+                nav.__navigation .navigation-buttons ul li .menu-button .nav-icon i, .__navigation .navigation-buttons ul li .menu-button .nav-icon i {
+                  font-size: 1.4em; } }
+            nav.__navigation .navigation-buttons ul li .menu-button .nav-icon.__close-icon i, .__navigation .navigation-buttons ul li .menu-button .nav-icon.__close-icon i {
+              font-size: 2em; }
+          nav.__navigation .navigation-buttons ul li .menu-button .menu-button-text.__text-open, .__navigation .navigation-buttons ul li .menu-button .menu-button-text.__text-open {
             margin-left: 8px;
             letter-spacing: 0.05em; }
             @media (max-width: 992px) {
-              nav .navigation-buttons ul li .menu-button .menu-button-text {
+              nav.__navigation .navigation-buttons ul li .menu-button .menu-button-text.__text-open, .__navigation .navigation-buttons ul li .menu-button .menu-button-text.__text-open {
                 display: none;
                 margin-left: 0; } }
     @media (max-width: 992px) {
-      nav .navigation-buttons {
+      nav.__navigation .navigation-buttons, .__navigation .navigation-buttons {
         margin: 14px 0; } }
-  nav.__sticky {
+  nav.__navigation.__sticky, .__navigation.__sticky {
     height: 80px; }
-    nav.__sticky .brand-logo {
+    nav.__navigation.__sticky .brand-logo, .__navigation.__sticky .brand-logo {
       height: 60px; }
-      nav.__sticky .brand-logo img {
+      nav.__navigation.__sticky .brand-logo img, .__navigation.__sticky .brand-logo img {
         height: 60px; }
-    nav.__sticky .navigation-buttons {
+    nav.__navigation.__sticky .navigation-buttons, .__navigation.__sticky .navigation-buttons {
       margin: 20px 0; }
       @media (max-width: 992px) {
-        nav.__sticky .navigation-buttons {
+        nav.__navigation.__sticky .navigation-buttons, .__navigation.__sticky .navigation-buttons {
           margin: 14px 0; } }
   @media (max-width: 992px) {
-    nav {
+    nav.__navigation, .__navigation {
       height: 68px; }
-      nav .brand-logo {
+      nav.__navigation .brand-logo, .__navigation .brand-logo {
         margin: 8px 0;
         height: 52px; }
-        nav .brand-logo img {
+        nav.__navigation .brand-logo img, .__navigation .brand-logo img {
           height: 52px; }
-      nav.__sticky {
+      nav.__navigation.__sticky, .__navigation.__sticky {
         height: 68px; }
-        nav.__sticky .brand-logo {
+        nav.__navigation.__sticky .brand-logo, .__navigation.__sticky .brand-logo {
           margin: 8px 0;
           height: 52px; }
-          nav.__sticky .brand-logo img {
+          nav.__navigation.__sticky .brand-logo img, .__navigation.__sticky .brand-logo img {
             height: 52px; } }
+
+/*
+*****************************************
+**** NAVIGATION DRAWER
+*****************************************
+*/
+.drawer-arcade-style {
+  border-left: 1px solid #DFDFDF;
+  background-color: #fff;
+  width: 100%;
+  max-width: 320px; }
+  @media (max-width: 480px) {
+    .drawer-arcade-style {
+      max-width: 100%; } }
+  .drawer-arcade-style .__navigation, .drawer-arcade-style .__drawer-navigation {
+    border: none;
+    padding: 0 25px 0 35px; }
+  .drawer-arcade-style .__drawer-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .drawer-arcade-style .__drawer-navigation ul a {
+      font-size: 10px; }
+  .drawer-arcade-style .__drawer-navigation > ul {
+    padding-top: 2px; }
+    .drawer-arcade-style .__drawer-navigation > ul > li {
+      padding: 20px 0; }
+      .drawer-arcade-style .__drawer-navigation > ul > li > a {
+        font-family: "WhitneySemiBold", serif;
+        font-size: 1.6em;
+        color: #666666;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        line-height: 0.8em;
+        vertical-align: middle;
+        display: block;
+        text-decoration: none; }
+      .drawer-arcade-style .__drawer-navigation > ul > li > ul {
+        padding-top: 5px; }
+        .drawer-arcade-style .__drawer-navigation > ul > li > ul > li > a {
+          display: block;
+          padding: 15px 0;
+          font-family: "WhitneyBookItalic", serif;
+          font-size: 1.6em;
+          color: #666666;
+          line-height: 0.8em;
+          vertical-align: middle; }
+        .drawer-arcade-style .__drawer-navigation > ul > li > ul > li:last-child > a {
+          padding-bottom: 0px; }
+
+@media (max-width: 480px) {
+  .drawer-right .drawer-main {
+    right: -100%; } }
+
+.drawer-overlay-upper {
+  background-color: #fff;
+  opacity: 0.3; }
