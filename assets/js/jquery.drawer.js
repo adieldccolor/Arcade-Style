@@ -55,6 +55,10 @@
           drawerScroll.refresh();
         });
 
+        $(window).on('updated:props', function(){
+          drawerScroll.refresh();
+        });
+
         $("." + options.dropdownClass)
         .on(options.dropdownShown, function() { drawerScroll.refresh(); })
         .on(options.dropdownHidden, function() { drawerScroll.refresh(); });

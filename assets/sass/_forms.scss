@@ -1,0 +1,37 @@
+/*
+*****************************
+**** Forms
+*****************************
+*/
+
+
+/*
+*****************************
+DROP DOWN / SELECT
+*****************************
+*/
+.select2-container{
+  z-index: 5900;
+}
+
+.select2-dropdown {
+  background-color: #FFF;
+  border: 1px solid #858585;
+  border-radius: 0;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: #FBF1FB;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #CF69CF;
+  color: #FFF;
+}
+
+.select2-results__option {
+  font-family: $WhitneyBook;
+  color: #666;
+  font-size: $font-size;
+  font-size: 1.6em;
+}

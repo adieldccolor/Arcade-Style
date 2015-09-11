@@ -13,12 +13,70 @@
 * */
 var arcadeStyle = {}, __timers = [];
 
+
+/*
+* Function to start everything related to the navigation and the navigation drawer
+* @return
+* */
+arcadeStyle.NavigationDrawer = function(){
+    if( !$('body').hasClass('drawer') ){
+        $('body').addClass('drawer');
+    }
+
+    $('.drawer').drawer();
+
+
+    $('.__drawer-navigation > ul > li').each(function(){
+        var $cur = $(this);
+        if( $cur.find('ul').length > 0 ){
+            $cur.addClass('js-can-collapse')
+        }else{
+            $cur.addClass('js-cant-collapse')
+        }
+    });
+
+
+    $('.__navigation').each(function(){
+        var $cur = $(this);
+        var $cloned = $cur.clone().addClass('__cloned');
+
+        if( $cur.closest('.__drawer-content').length > 0 ){
+            $cur.closest('.__drawer-content').before($cloned);
+        }else{
+            $cur.after($cloned);
+        }
+
+    });
+};
+
+
+
+
+
+/*
+* Function to start an external plugin that will allow us to create a custom ui for <select> elements.
+* @return
+* */
+arcadeStyle.ArcadeUISelect = function(){
+    $(".__arcade-ui-select").select2({
+        minimumResultsForSearch: Infinity
+    });
+};
+
+
+
+
+
 /*
 * Function to start all plugins and events in website
 * @return
 * */
 arcadeStyle.start = function(){
-    $('.drawer').drawer();
+
+    this.NavigationDrawer();
+    this.ArcadeUISelect();
+
+
 
     this.listenEvents();
 };
@@ -39,7 +97,15 @@ arcadeStyle.listenEvents = function(){
         }
 
         $drawer.drawer("open");
-    });
+    })
+        .on('click', '.__drawer-navigation > ul > li.js-can-collapse > a', function(e){
+            e.preventDefault();e.stopPropagation();
+
+            $(this).closest('li').toggleClass('__is-expanded');
+            $(window).trigger('updated:props');
+            return false;
+        })
+    ;
 };
 
 

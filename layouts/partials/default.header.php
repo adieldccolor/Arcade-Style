@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
     <link rel="stylesheet" href="assets/css/drawer.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -45,7 +46,10 @@
         <div class="container">
             <form action="">
                 <input type="hidden" name="page" value="search" />
-                <input type="text" name="q" id="search-query">
+                <input type="text" name="q" id="search-query" placeholder="Search Technologies..." />
+                <button type="submit" class="__search-icon">
+                    <i class="icon-magnify"></i>
+                </button>
             </form>
         </div>
     </div>
@@ -78,7 +82,7 @@
             <div class="__drawer-navigation">
                 <ul>
                     <li>
-                        <a href="javascript:;">Our technologies</a>
+                        <a href="<?php echo get_page_url("technologies"); ?>">Our technologies</a>
                         <ul>
                             <li><a href="javascript:;">Fragrance</a></li>
                             <li><a href="javascript:;">Makeup</a></li>
@@ -89,7 +93,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;">Our capabilities</a>
+                        <a href="<?php echo get_page_url("capabilities"); ?>">Our capabilities</a>
                         <ul>
                             <li><a href="javascript:;">Fragrance</a></li>
                             <li><a href="javascript:;">Makeup</a></li>
@@ -99,8 +103,14 @@
                             <li><a href="javascript:;">All Technologies</a></li>
                         </ul>
                     </li>
-                    <li><a href="javascript:;">About us</a></li>
-                    <li><a href="javascript:;">Contact us</a></li>
+                    <li><a href="<?php echo get_page_url("about"); ?>">About us</a></li>
+                    <li><a href="<?php echo get_page_url("contact"); ?>">Contact us</a></li>
+                    <li>
+                        <select name="language" id="language" class="__arcade-ui-select form-control">
+                            <option value="en-us">English</option>
+                            <option value="es-es">Spanish</option>
+                        </select>
+                    </li>
 
 
                 </ul>
