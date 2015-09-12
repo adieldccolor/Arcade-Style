@@ -9,12 +9,19 @@ nav.__navigation, .__navigation{
   background-color: #fff;
   height: 100px;
   position: relative;
+  z-index: 4000;
 
   &.__cloned{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+  }
+
+
+  .__navigation-content{
+    position: relative;
+    z-index: 10;
   }
 
   /*
@@ -196,8 +203,34 @@ nav.__navigation, .__navigation{
       height: 60px;
     }
 
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: max-height 0.3s 0.2s, opacity 0.3s 0.2s;
+    -moz-transition: max-height 0.3s 0.2s, opacity 0.3s 0.2s;
+    -ms-transition: max-height 0.3s 0.2s, opacity 0.3s 0.2s;
+    -o-transition: max-height 0.3s 0.2s, opacity 0.3s 0.2s;
+    transition: max-height 0.3s 0.2s, opacity 0.3s 0.2s;
+
     .container{
       position: relative;
+      opacity: 0;
+      -webkit-transition: opacity 0.3s 0s;
+      -moz-transition: opacity 0.3s 0s;
+      -ms-transition: opacity 0.3s 0s;
+      -o-transition: opacity 0.3s 0s;
+      transition: opacity 0.3s 0s;
+      visibility: hidden;
+
+      form{
+        position: relative;
+        display: block;
+        margin: 0 20px;
+
+        @include mq('small'){
+          margin: 0;
+        }
+      }
 
       input[type="text"]{
         position: relative;
@@ -224,7 +257,7 @@ nav.__navigation, .__navigation{
         }
       }
 
-      button[type="submit"], input[type="submit"]{
+      button[type="submit"], input[type="submit"], .__search-icon{
         display: block;
         position: absolute;
         right: 0;
@@ -235,11 +268,20 @@ nav.__navigation, .__navigation{
         border: none;
         background: none;
         color: #B7B7B7;
+        font-size: $font-size;
+        font-size: 3.4em;
+        padding: 0;
+
+        i{
+          vertical-align: middle;
+          display: block;
+        }
 
         @include mq('small'){
           width: 22px;
           height: 23px;
           margin-top: -11px;
+          font-size: 2.4em;
         }
       }
 
@@ -252,9 +294,33 @@ nav.__navigation, .__navigation{
 
 
 
+
 .__js-search--open{
   a.search-button, .search-button{
     color: #510B76 !important;
+  }
+
+  .__navigation.__cloned{
+    .__search--bar{
+      max-height: 80px;
+      overflow: inherit;
+      opacity: 1;
+      -webkit-transition: max-height 0.3s 0s, opacity 0.3s 0s;
+      -moz-transition: max-height 0.3s 0s, opacity 0.3s 0s;
+      -ms-transition: max-height 0.3s 0s, opacity 0.3s 0s;
+      -o-transition: max-height 0.3s 0s, opacity 0.3s 0s;
+      transition: max-height 0.3s 0s, opacity 0.3s 0s;
+
+      .container{
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: opacity 0.2s 0.3s;
+        -moz-transition: opacity 0.2s 0.3s;
+        -ms-transition: opacity 0.2s 0.3s;
+        -o-transition: opacity 0.2s 0.3s;
+        transition: opacity 0.2s 0.3s;
+      }
+    }
   }
 }
 

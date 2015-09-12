@@ -375,6 +375,7 @@ nav.__navigation, .__navigation {
   background-color: #fff;
   height: 100px;
   position: relative;
+  z-index: 4000;
   /*
   ************************
   *** Brand Logo
@@ -400,6 +401,9 @@ nav.__navigation, .__navigation {
     top: 0;
     left: 0;
     width: 100%; }
+  nav.__navigation .__navigation-content, .__navigation .__navigation-content {
+    position: relative;
+    z-index: 10; }
   nav.__navigation .brand-logo, .__navigation .brand-logo {
     float: left;
     margin: 10px 0;
@@ -490,12 +494,34 @@ nav.__navigation, .__navigation {
   nav.__navigation .__search--bar, .__navigation .__search--bar {
     background-color: #F5F3F0;
     border-bottom: 1px solid #DFDFDF;
-    height: 80px; }
+    height: 80px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: max-height 0.3s 0.2s, opacity 0.3s 0.2s;
+    -moz-transition: max-height 0.3s 0.2s, opacity 0.3s 0.2s;
+    -ms-transition: max-height 0.3s 0.2s, opacity 0.3s 0.2s;
+    -o-transition: max-height 0.3s 0.2s, opacity 0.3s 0.2s;
+    transition: max-height 0.3s 0.2s, opacity 0.3s 0.2s; }
     @media (max-width: 992px) {
       nav.__navigation .__search--bar, .__navigation .__search--bar {
         height: 60px; } }
     nav.__navigation .__search--bar .container, .__navigation .__search--bar .container {
-      position: relative; }
+      position: relative;
+      opacity: 0;
+      -webkit-transition: opacity 0.3s 0s;
+      -moz-transition: opacity 0.3s 0s;
+      -ms-transition: opacity 0.3s 0s;
+      -o-transition: opacity 0.3s 0s;
+      transition: opacity 0.3s 0s;
+      visibility: hidden; }
+      nav.__navigation .__search--bar .container form, .__navigation .__search--bar .container form {
+        position: relative;
+        display: block;
+        margin: 0 20px; }
+        @media (max-width: 992px) {
+          nav.__navigation .__search--bar .container form, .__navigation .__search--bar .container form {
+            margin: 0; } }
       nav.__navigation .__search--bar .container input[type="text"], .__navigation .__search--bar .container input[type="text"] {
         position: relative;
         display: block;
@@ -518,7 +544,7 @@ nav.__navigation, .__navigation {
         @media (max-width: 768px) {
           nav.__navigation .__search--bar .container input[type="text"], .__navigation .__search--bar .container input[type="text"] {
             font-size: 2em; } }
-      nav.__navigation .__search--bar .container button[type="submit"], nav.__navigation .__search--bar .container input[type="submit"], .__navigation .__search--bar .container button[type="submit"], .__navigation .__search--bar .container input[type="submit"] {
+      nav.__navigation .__search--bar .container button[type="submit"], nav.__navigation .__search--bar .container input[type="submit"], nav.__navigation .__search--bar .container .__search-icon, .__navigation .__search--bar .container button[type="submit"], .__navigation .__search--bar .container input[type="submit"], .__navigation .__search--bar .container .__search-icon {
         display: block;
         position: absolute;
         right: 0;
@@ -528,15 +554,40 @@ nav.__navigation, .__navigation {
         height: 35px;
         border: none;
         background: none;
-        color: #B7B7B7; }
+        color: #B7B7B7;
+        font-size: 10px;
+        font-size: 3.4em;
+        padding: 0; }
+        nav.__navigation .__search--bar .container button[type="submit"] i, nav.__navigation .__search--bar .container input[type="submit"] i, nav.__navigation .__search--bar .container .__search-icon i, .__navigation .__search--bar .container button[type="submit"] i, .__navigation .__search--bar .container input[type="submit"] i, .__navigation .__search--bar .container .__search-icon i {
+          vertical-align: middle;
+          display: block; }
         @media (max-width: 992px) {
-          nav.__navigation .__search--bar .container button[type="submit"], nav.__navigation .__search--bar .container input[type="submit"], .__navigation .__search--bar .container button[type="submit"], .__navigation .__search--bar .container input[type="submit"] {
+          nav.__navigation .__search--bar .container button[type="submit"], nav.__navigation .__search--bar .container input[type="submit"], nav.__navigation .__search--bar .container .__search-icon, .__navigation .__search--bar .container button[type="submit"], .__navigation .__search--bar .container input[type="submit"], .__navigation .__search--bar .container .__search-icon {
             width: 22px;
             height: 23px;
-            margin-top: -11px; } }
+            margin-top: -11px;
+            font-size: 2.4em; } }
 
 .__js-search--open a.search-button, .__js-search--open .search-button {
   color: #510B76 !important; }
+
+.__js-search--open .__navigation.__cloned .__search--bar {
+  max-height: 80px;
+  overflow: inherit;
+  opacity: 1;
+  -webkit-transition: max-height 0.3s 0s, opacity 0.3s 0s;
+  -moz-transition: max-height 0.3s 0s, opacity 0.3s 0s;
+  -ms-transition: max-height 0.3s 0s, opacity 0.3s 0s;
+  -o-transition: max-height 0.3s 0s, opacity 0.3s 0s;
+  transition: max-height 0.3s 0s, opacity 0.3s 0s; }
+  .__js-search--open .__navigation.__cloned .__search--bar .container {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 0.2s 0.3s;
+    -moz-transition: opacity 0.2s 0.3s;
+    -ms-transition: opacity 0.2s 0.3s;
+    -o-transition: opacity 0.2s 0.3s;
+    transition: opacity 0.2s 0.3s; }
 
 /*
 *****************************************

@@ -105,6 +105,19 @@ arcadeStyle.listenEvents = function(){
             $(window).trigger('updated:props');
             return false;
         })
+
+        .on('click', '.search-button', function(){
+            $('body').toggleClass('__js-search--open');
+
+            if( !$('body').hasClass('__js-search--open') ){
+                if(__timers['focusSearchInput'] != undefined){
+                    clearTimeout(__timers['focusSearchInput']);
+                }
+                __timers['focusSearchInput'] = setTimeout(function(){
+                    $('.__site-navigation.__cloned [name="q"]').trigger('focus');
+                }, 500);
+            }
+        })
     ;
 };
 

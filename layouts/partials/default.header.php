@@ -19,26 +19,29 @@
 <body class="drawer drawer-right">
 
 
-<nav class="__navigation">
-    <div class="container">
+<nav class="__navigation __site-navigation">
+
+    <div class="__navigation-content">
+        <div class="container">
         <span class="brand-logo">
             <a href="<?php echo get_page_url("index"); ?>"><img src="assets/images/logotype.png" alt="Arcade Beauty" /></a>
         </span>
 
-        <div class="navigation-buttons">
-            <ul>
-                <li><a href="javascript:;" class="search-button"><i class="icon-magnify"></i></a></li>
-                <li class="hidden-xs"><a href="javascript:;" class="button">CONTACT US</a></li>
-                <li class="nav-divider hidden-xs"></li>
-                <li><a href="javascript:;" class="menu-button">
+            <div class="navigation-buttons">
+                <ul>
+                    <li><a href="javascript:;" class="search-button"><i class="icon-magnify"></i></a></li>
+                    <li class="hidden-xs"><a href="javascript:;" class="button">CONTACT US</a></li>
+                    <li class="nav-divider hidden-xs"></li>
+                    <li><a href="javascript:;" class="menu-button">
                         <span class="nav-icon">
                             <i class="icon-lines-nav"></i>
                         </span>
                         <span class="menu-button-text __text-open">
                             MENU
                         </span>
-                    </a></li>
-            </ul>
+                        </a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
