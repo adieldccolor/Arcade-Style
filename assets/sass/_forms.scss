@@ -35,3 +35,40 @@ DROP DOWN / SELECT
   font-size: $font-size;
   font-size: 1.6em;
 }
+
+
+
+/*
+********************************
+****** FORM INPUT
+*/
+
+.__form--input{
+  position: relative;
+  font-size: $font-size;
+
+  input[type="text"], input[type="password"], input[type="email"]{
+    font-family: $WhitneyBookItalic;
+    color: #b7b7b7;
+    font-size: 1.8em;
+    height: 45px;
+    line-height: 45px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #D3D3D3;
+    position: relative;
+    display: block;
+    width: 275px;
+  }
+
+  .__form--input--icon{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 23px;
+    height: 25px;
+    i, & {
+      color: #b7b7b7;
+    }
+  }
+}

@@ -1,0 +1,210 @@
+/*
+***********************************
+***** FOOTER
+***********************************
+*/
+
+.__footer{
+  background-color: #510B76;
+  color: #FFFFFF;
+
+  .__footer--content{
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    .container{
+      max-width: 996px;
+    }
+
+    .__footer--address{
+
+      .__footer--brand{
+        width: 80px;
+        float: left;
+        margin-right: 20px;
+      }
+
+      p, &{
+        font-size: $font-size;
+        line-height: 1.55em;
+        letter-spacing: 0.01em;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+
+      p{
+        font-family: $WhitneyMedium;
+        font-size: 1.4em;
+        text-transform: uppercase;
+
+        @include mq('x-mobile'){
+          font-size: 1.3em;
+        }
+      }
+
+      a{
+        font-size: $font-size;
+        font-size: 1.6em;
+        color: #FFFFFF;
+        font-family: $WhitneyBookItalic;
+
+        @include mq('small'){
+          font-size: 1.5em;
+        }
+        @include mq('mobile'){
+          font-size: 1.4em;
+        }
+        @include mq('x-mobile'){
+          font-size: 1.3em;
+        }
+      }
+
+    }
+
+
+
+    .__footer--join{
+
+      @include mq('mobile'){
+        //margin-top: 36px;
+        margin-top: 39px;
+      }
+
+      h1, h2, h3{
+        margin: 0;
+        padding: 0;
+      }
+
+      .__form--input{
+        margin-top: 5px;
+
+        input[type="text"], input[type="password"], input[type="email"]{
+          border-color: #76568F;
+          color: #d3d3d3;
+          width: 100%;
+
+          @include mq('small'){
+            font-size: 1.7em;
+          }
+
+          @include mq('x-mobile'){
+            font-size: 1.6em;
+          }
+        }
+
+        .__form--input--icon{
+          width: 11px;
+          height: 18px;
+          font-size: $font-size;
+          top: 15px;
+
+
+          i, &{
+            color: #C124B8;
+            font-size: 1.35em;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .__footer--copyrights{
+    background-color: #35074E;
+    min-height: 45px;
+    line-height: 35px;
+    padding: 5px 0;
+
+    .container{
+      max-width: 996px;
+      font-size: $font-size;
+    }
+
+
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: block;
+      height: 35px;
+      line-height: 35px;
+
+      @include mq('mobile'){
+        margin-top: 5px;
+      }
+
+      li{
+        display: inline-block;
+        font-size: $font-size;
+        padding-right: 30px;
+
+        @include mq('mobile'){
+          padding-right: 20px;
+        }
+
+        &:last-child{
+          padding-right: 0;
+        }
+
+        a{
+          display: block;
+          font-family: $WhitneyBookItalic;
+          font-size: $font-size;
+          font-size: 1.6em;
+          color: #FFFFFF;
+          line-height: 35px;
+          height: 35px;
+
+          @include mq('small'){
+            font-size: 1.5em;
+          }
+          @include mq('mobile'){
+            font-size: 1.4em;
+          }
+          @include mq('x-mobile'){
+            font-size: 1.3em;
+          }
+
+          &.__linkedin--icon{
+            img{
+              @include mq('mobile'){
+                width: 48px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .__copyright{
+      font-family: $WhitneyBook;
+      font-size: $font-size;
+      font-size: 1.6em;
+      color: #FFFFFF;
+      opacity: 0.5;
+
+      @include mq('small'){
+        font-size: 1.5em;
+      }
+      @include mq('mobile'){
+        font-size: 1.4em;
+      }
+      @include mq('x-mobile'){
+        font-size: 1.3em;
+      }
+    }
+
+
+    .__mobile--reset{
+      @include mq('mobile'){
+        width: 100%;
+        float: none;
+        text-align: center;
+      }
+    }
+
+  }
+
+}

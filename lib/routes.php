@@ -3,5 +3,6 @@
 $routes = array(
     "index",
     "ui",
+    "search",
     "about"
 );

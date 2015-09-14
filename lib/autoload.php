@@ -11,10 +11,14 @@ class Template{
     }
 
     public static function getHeader(){
+        global $routes;
+
         include "layouts/partials/" . constant("TEMPLATE") . ".header.php";
     }
 
     public static function getFooter(){
+        global $routes;
+
         include "layouts/partials/" . constant("TEMPLATE") . ".footer.php";
     }
 

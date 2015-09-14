@@ -11,11 +11,37 @@ nav.__navigation, .__navigation{
   position: relative;
   z-index: 4000;
 
+  -webkit-transition: height 0.2s;
+  -moz-transition: height 0.2s;
+  -ms-transition: height 0.2s;
+  -o-transition: height 0.2s;
+  transition: height 0.2s;
+
+
+  &.__static{
+    border: none;
+
+    max-height: 100px;
+    -webkit-transition: max-height 0.2s 0.3s, height 0.2s 0.3s;
+    -moz-transition: max-height 0.2s 0.3s, height 0.2s 0.3s;
+    -ms-transition: max-height 0.2s 0.3s, height 0.2s 0.3s;
+    -o-transition: max-height 0.2s 0.3s, height 0.2s 0.3s;
+    transition: max-height 0.2s 0.3s, height 0.2s 0.3s;
+  }
+
+
   &.__cloned{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+  }
+
+
+  .__container-fluid{
+    width: 100%;
+    max-width: 100%;
+    padding: 0 23px;
   }
 
 
@@ -29,6 +55,14 @@ nav.__navigation, .__navigation{
   *** Brand Logo
   ************************
   */
+  .brand-logo, .brand-logo img{
+    -webkit-transition: margin 0.2s, height 0.2s;
+    -moz-transition: margin 0.2s, height 0.2s;
+    -ms-transition: margin 0.2s, height 0.2s;
+    -o-transition: margin 0.2s, height 0.2s;
+    transition: margin 0.2s, height 0.2s;
+  }
+
   .brand-logo{
     float: left;
     margin: 10px 0;
@@ -49,6 +83,12 @@ nav.__navigation, .__navigation{
   .navigation-buttons{
     float: right;
     margin: 30px 0;
+
+    -webkit-transition: margin 0.2s;
+    -moz-transition: margin 0.2s;
+    -ms-transition: margin 0.2s;
+    -o-transition: margin 0.2s;
+    transition: margin 0.2s;
 
     ul{
       margin: 0;
@@ -77,6 +117,35 @@ nav.__navigation, .__navigation{
 
         .button{
           width: 150px;
+        }
+
+        .arrow--search-bar{
+          position: absolute;
+          height: 0;
+          width: 0;
+          border: 11px solid transparent;
+          border-top-color: #DFDFDF;
+          border-top-width: 12px;
+          border-left-width: 12px;
+          bottom: -12px;
+          opacity: 0;
+          visibility: hidden;
+          -webkit-transition: opacity 0.2s 0s, visibility 0s 0.3s, bottom 0.3s 0s;
+          -moz-transition: opacity 0.2s 0s, visibility 0s 0.3s, bottom 0.3s 0s;
+          -ms-transition: opacity 0.2s 0s, visibility 0s 0.3s, bottom 0.3s 0s;
+          -o-transition: opacity 0.2s 0s, visibility 0s 0.3s, bottom 0.3s 0s;
+          transition: opacity 0.2s 0s, visibility 0s 0.3s, bottom 0.3s 0s;
+          .arrow--inner {
+            position: absolute;
+            height: 0;
+            width: 0;
+            border: 11px solid transparent;
+            border-top-color: #fff;
+            border-top-width: 12px;
+            border-left-width: 12px;
+            bottom: -10px;
+            left: -12px;
+          }
         }
 
         .search-button{
@@ -153,6 +222,7 @@ nav.__navigation, .__navigation{
       @include mq('small'){
         margin: 14px 0;
       }
+
     }
 
   }
@@ -300,7 +370,36 @@ nav.__navigation, .__navigation{
     color: #510B76 !important;
   }
 
-  .__navigation.__cloned{
+  .__navigation{
+
+    &.__static{
+      max-height: 200px;
+      height: 100%;
+
+      -webkit-transition: max-height 0.2s 0s, height 0.2s 0s;
+      -moz-transition: max-height 0.2s 0s, height 0.2s 0s;
+      -ms-transition: max-height 0.2s 0s, height 0.2s 0s;
+      -o-transition: max-height 0.2s 0s, height 0.2s 0s;
+      transition: max-height 0.2s 0s, height 0.2s 0s;
+    }
+
+    .navigation-buttons{
+      ul{
+        li{
+          .arrow--search-bar{
+            opacity: 1;
+            visibility: visible;
+            bottom: -22px;
+            -webkit-transition: opacity 0.3s 0.2s, visibility 0s 0s, bottom 0.3s 0.2s;
+            -moz-transition: opacity 0.3s 0.2s, visibility 0s 0s, bottom 0.3s 0.2s;
+            -ms-transition: opacity 0.3s 0.2s, visibility 0s 0s, bottom 0.3s 0.2s;
+            -o-transition: opacity 0.3s 0.2s, visibility 0s 0s, bottom 0.3s 0.2s;
+            transition: opacity 0.3s 0.2s, visibility 0s 0s, bottom 0.3s 0.2s;
+          }
+        }
+      }
+    }
+
     .__search--bar{
       max-height: 80px;
       overflow: inherit;

@@ -1,0 +1,171 @@
+/*
+******************************************
+****** SLIDERS
+******************************************
+*/
+
+
+
+/*
+MAIN SLIDER
+*/
+.__main--slider{
+
+  height: 530px;
+
+  .__slide-item{
+    background: #f2f2f2 0 50% no-repeat;
+    height: 530px;
+
+    @include mq('large'){
+      background-position: top right;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+  }
+
+}
+
+
+/*
+FEATURED CATEGORIES
+*/
+.__featured--categories{
+
+  .divider__limited{
+    max-width: 1200px;
+    margin: 0 auto 50px;
+
+    @include mq('mobile'){
+      margin-bottom: 14px;
+    }
+  }
+
+  .container{
+    &.__limited--width{
+      padding-top: 60px;
+      padding-bottom: 75px;
+      max-width: 1171px;
+
+      @include mq('mobile'){
+        padding-top: 20px;
+        padding-bottom: 35px;
+      }
+    }
+  }
+
+  .__feature--single{
+    float: left;
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+    width: 16.66%;
+    text-align: center;
+
+    @include mq('small'){
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    @include mq('mobile'){
+      width: 33.33%;
+      padding-left: 3px;
+      padding-right: 3px;
+
+      &.__first--row{
+        margin-bottom: 22px;
+      }
+    }
+
+
+
+
+
+    .__feature--image{
+      img{
+        width: 100%;
+      }
+    }
+
+    .__feature--text{
+      margin-top: 21px;
+
+      @include mq('small'){
+        margin-top: 11px;
+      }
+      @include mq('mobile'){
+        margin-top: 6px;
+      }
+
+    }
+
+  }
+}
+
+
+
+
+/*
+FIND A SOLUTION
+*/
+.__find--solution{
+  text-align: center;
+
+  .__find--solution--columns{
+    letter-spacing: 0;
+    font-size: 0;
+    margin-top: 70px;
+
+    @include mq('mobile'){
+      margin-left: 7px;
+      margin-right: 7px;
+      margin-top: 30px;
+    }
+
+    .__find--solution--column-single{
+      letter-spacing: inherit;
+      width: 275px;
+      display: inline-block;
+      font-size: $font-size;
+
+      @include mq('mobile'){
+        width: 100%;
+        display: block;
+      }
+
+      &.__middle{
+        padding: 0 60px;
+        width: auto;
+
+        @include mq('mobile'){
+          padding-top: 24px;
+          padding-bottom: 20px;
+        }
+      }
+
+      a.button.__block-level{
+        width: 100%;
+        display: block;
+      }
+
+      .__form--input{
+        .__form--input--icon{
+          i, & {
+            font-size: 1.57em;
+          }
+        }
+
+        input[type="text"], input[type="password"], input[type="email"]{
+          width: 100%;
+        }
+      }
+
+    }
+  }
+
+
+  .divider{
+    max-width: 200px;
+    margin: 50px auto;
+  }
+
+}
