@@ -654,6 +654,39 @@ FIND A SOLUTION
         padding: 0 10px; }
 
 /*
+FEATURED PRODUCTS
+*/
+.__featured--products {
+  background-color: #F5F3F0;
+  padding: 53px 0 80px; }
+  .__featured--products .divider {
+    max-width: 200px;
+    margin: 80px auto; }
+    @media (max-width: 767px) {
+      .__featured--products .divider {
+        max-width: 100%; } }
+  .__featured--products .__featured--single .__feature--link {
+    margin-top: 8px; }
+
+/*
+CUSTOMIZED SOLUTION
+*/
+.__customize--solution {
+  padding: 32px 0 60px; }
+  @media (max-width: 767px) {
+    .__customize--solution {
+      padding: 58px 0 76px; } }
+  .__customize--solution .container {
+    text-align: center; }
+    .__customize--solution .container .__customize--solution--text {
+      padding: 8px 0 13px;
+      margin: 0 auto;
+      max-width: 790px; }
+      @media (max-width: 767px) {
+        .__customize--solution .container .__customize--solution--text {
+          padding: 4px 0 9px; } }
+
+/*
 *****************************
 **** NAVIGATION
 *****************************

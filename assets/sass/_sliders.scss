@@ -204,3 +204,54 @@ FIND A SOLUTION
 /*
 FEATURED PRODUCTS
 */
+.__featured--products{
+  background-color: #F5F3F0;
+  padding: 53px 0 80px;
+
+  .divider{
+    max-width: 200px;
+    margin: 80px auto;
+
+    @include mq('mobile'){
+      max-width: 100%;
+    }
+  }
+
+
+  .__featured--single{
+
+    .__feature--link{
+      margin-top: 8px;
+    }
+  }
+
+}
+
+
+
+
+/*
+CUSTOMIZED SOLUTION
+*/
+.__customize--solution{
+  padding: 32px 0 60px;
+
+  @include mq('mobile'){
+    padding: 58px 0 76px;
+  }
+
+  .container{
+    text-align: center;
+
+
+    .__customize--solution--text{
+      padding: 8px 0 13px;
+      margin: 0 auto;
+      max-width: 790px;
+
+      @include mq('mobile'){
+        padding: 4px 0 9px;
+      }
+    }
+  }
+}
