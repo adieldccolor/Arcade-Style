@@ -309,6 +309,11 @@ a{
 
 a.__link1, .__link1, a.__link2, .__link2, a.__link3, .__link3{
   font-size: $font-size;
+
+  .__link--icon{
+    font-size: $font-size + 2;
+    vertical-align: middle;
+  }
 }
 
 a.__link1, .__link1{

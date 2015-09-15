@@ -291,6 +291,9 @@ a {
 
 a.__link1, .__link1, a.__link2, .__find--solution .__popular-searches-suggest ul li a, .__link2, .__find--solution .__popular-searches-suggest ul li a, a.__link3, .__link3 {
   font-size: 10px; }
+  a.__link1 .__link--icon, .__link1 .__link--icon, a.__link2 .__link--icon, .__find--solution .__popular-searches-suggest ul li a .__link--icon, .__link2 .__link--icon, .__find--solution .__popular-searches-suggest ul li a .__link--icon, a.__link3 .__link--icon, .__link3 .__link--icon {
+    font-size: 12px;
+    vertical-align: middle; }
 
 a.__link1, .__link1 {
   font-family: "WhitneyBookItalic", serif;
@@ -541,7 +544,8 @@ DROP DOWN / SELECT
 MAIN SLIDER
 */
 .__main--slider {
-  height: 530px; }
+  height: 530px;
+  overflow: hidden; }
   .__main--slider .__slide-item {
     background: #f2f2f2 0 50% no-repeat;
     height: 530px; }
@@ -665,6 +669,12 @@ FEATURED PRODUCTS
     @media (max-width: 767px) {
       .__featured--products .divider {
         max-width: 100%; } }
+  @media (min-width: 993px) {
+    .__featured--products .__featured--single [class*="col-"] {
+      padding-left: 74px;
+      padding-right: 74px; } }
+  .__featured--products .__featured--single .__featured--image {
+    max-width: 100%; }
   .__featured--products .__featured--single .__feature--link {
     margin-top: 8px; }
 
