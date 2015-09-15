@@ -685,6 +685,11 @@ CUSTOMIZED SOLUTION
       @media (max-width: 767px) {
         .__customize--solution .container .__customize--solution--text {
           padding: 4px 0 9px; } }
+    .__customize--solution .container .__cta--button .button {
+      width: 210px; }
+      @media (max-width: 480px) {
+        .__customize--solution .container .__cta--button .button {
+          width: auto; } }
 
 /*
 *****************************

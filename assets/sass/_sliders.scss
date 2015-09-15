@@ -253,5 +253,15 @@ CUSTOMIZED SOLUTION
         padding: 4px 0 9px;
       }
     }
+
+    .__cta--button{
+      .button{
+        width: 210px;
+        @include mq('x-mobile'){
+          width: auto;
+        }
+      }
+    }
+
   }
 }
