@@ -284,19 +284,19 @@ SECTION: BUTTONS & LINKS
 ******************************************
 */
 a {
-  color: #510B76;
+  color: #C124B8;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #510B76; }
+    color: #C124B8; }
 
-a.__link1, .__link1, a.__link2, .__link2, a.__link3, .__link3 {
+a.__link1, .__link1, a.__link2, .__find--solution .__popular-searches-suggest ul li a, .__link2, .__find--solution .__popular-searches-suggest ul li a, a.__link3, .__link3 {
   font-size: 10px; }
 
 a.__link1, .__link1 {
   font-family: "WhitneyBookItalic", serif;
   font-size: 1.8em; }
 
-a.__link2, .__link2 {
+a.__link2, .__find--solution .__popular-searches-suggest ul li a, .__link2, .__find--solution .__popular-searches-suggest ul li a {
   font-family: "WhitneyBookItalic", serif;
   font-size: 1.6em; }
 
@@ -308,7 +308,7 @@ a.__link3, .__link3 {
   a.__link3:hover, a.__link3:focus, .__link3:hover, .__link3:focus {
     color: #AAA; }
 
-.__inverse a.__link1, .__inverse .__link1, .__inverse a.__link2, .__inverse .__link2 {
+.__inverse a.__link1, .__inverse .__link1, .__inverse a.__link2, .__inverse .__find--solution .__popular-searches-suggest ul li a, .__find--solution .__popular-searches-suggest ul li .__inverse a, .__inverse .__link2, .__inverse .__find--solution .__popular-searches-suggest ul li a, .__find--solution .__popular-searches-suggest ul li .__inverse a {
   color: #fff; }
 
 /*
@@ -602,7 +602,8 @@ FEATURED CATEGORIES
 FIND A SOLUTION
 */
 .__find--solution {
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 67px; }
   .__find--solution .__find--solution--columns {
     letter-spacing: 0;
     font-size: 0;
@@ -637,7 +638,20 @@ FIND A SOLUTION
         width: 100%; }
   .__find--solution .divider {
     max-width: 200px;
-    margin: 50px auto; }
+    margin: 50px auto 30px; }
+    @media (max-width: 767px) {
+      .__find--solution .divider {
+        max-width: 100%; } }
+  .__find--solution .__popular-searches-suggest h3, .__find--solution .__popular-searches-suggest ul {
+    display: inline-block; }
+  .__find--solution .__popular-searches-suggest ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .__find--solution .__popular-searches-suggest ul li {
+      display: inline-block; }
+      .__find--solution .__popular-searches-suggest ul li a {
+        padding: 0 10px; }
 
 /*
 *****************************

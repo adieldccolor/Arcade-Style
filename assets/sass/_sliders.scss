@@ -109,6 +109,8 @@ FIND A SOLUTION
 */
 .__find--solution{
   text-align: center;
+  padding-bottom: 67px;
+
 
   .__find--solution--columns{
     letter-spacing: 0;
@@ -165,7 +167,40 @@ FIND A SOLUTION
 
   .divider{
     max-width: 200px;
-    margin: 50px auto;
+    margin: 50px auto 30px;
+
+    @include mq('mobile'){
+      max-width: 100%;
+    }
+  }
+
+
+  .__popular-searches-suggest{
+    h3, ul{
+      display: inline-block;
+    }
+
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li{
+        display: inline-block;
+        a{
+          @extend .__link2;
+          padding: 0 10px;
+        }
+      }
+    }
   }
 
 }
+
+
+
+
+
+
+/*
+FEATURED PRODUCTS
+*/
