@@ -20,7 +20,7 @@
                     <h1 class="__sub1">Join Our Community</h1>
 
                     <form action="">
-                        <input type="hidden" name="page" value="<?php echo get_page_url('join'); ?>">
+                        <input type="hidden" name="page" value="join">
                         <div class="__form--input">
                             <input type="text" name="email" id="email--join--newsletter" placeholder="Email Address">
                             <div class="__form--input--icon">

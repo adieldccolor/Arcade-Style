@@ -1,14 +1,33 @@
 <div class="__main--slider">
     <div class="__slide-item" style="background-image: url(assets/images/__slide--1.jpg);">
         <div class="container __container--maxed">
-            <h1>The Sample Authority</h1>
-            <div class="__copy">
-                <p>We are dedicated to the creation of meaningful discovery experiences for the beauty and wellness industry.
-                    We provide expert quality, value and service to deliver influential moments to our clients.</p>
+            <div class="__slider--navigation-arrows">
+                <a href="javascript:;" class="__slider--arrow __slider--arrow-left __prev">
+                    <span class="__arrow--overlay"></span>
+                    <span class="__arrow--icon">
+                        <i class="icon-left-arrow"></i>
+                    </span>
+                </a>
+                <a href="javascript:;" class="__slider--arrow __slider--arrow-right __next">
+                    <span class="__arrow--overlay"></span>
+                    <span class="__arrow--icon">
+                        <i class="icon-right-arrow"></i>
+                    </span>
+                </a>
             </div>
-            <div class="__cta-buttons">
-                <a href="javascript:;" class="button">ABOUT US</a>
-                <a href="javascript:;" class="button __stroked">OUR SAMPLE</a>
+
+            <div class="__slider--content">
+                <div class="__slider--content-wrapper">
+                    <h1>The Sample Authority</h1>
+                    <div class="__copy __body--text1">
+                        <p>We are dedicated to the creation of meaningful discovery experiences for the beauty and wellness industry.
+                            We provide expert quality, value and service to deliver influential moments to our clients.</p>
+                    </div>
+                    <div class="__cta-buttons">
+                        <a href="javascript:;" class="button">ABOUT US</a>
+                        <a href="javascript:;" class="button __stroked">OUR SAMPLE</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -86,7 +105,7 @@
         <div class="__find--solution--columns">
             <div class="__find--solution--column-single">
                 <form action="">
-                    <input type="hidden" name="page" value="<?php echo get_page_url('search'); ?>">
+                    <input type="hidden" name="page" value="search">
 
                     <div class="__form--input">
                         <input type="text" name="q" id="keyword--home-search" placeholder="Search by Keyword">

@@ -108,6 +108,9 @@ arcadeStyle.Sliders = function(){
 
     __slider['main'] = $mainSlider;
     if( __slider['main'].length > 0 ){
+
+        //$mainSlider.find('.__slide-item');
+
         __slider['main'].owlCarousel({
             // autoPlay: -1, //Set AutoPlay to 3 seconds
             items : 1,
@@ -117,10 +120,41 @@ arcadeStyle.Sliders = function(){
             itemsMobile : [480,1],
             autoHeight : true,
             slideSpeed: 800,
+            circular: true
             //responsiveRefreshRate: 200,
             //afterAction: app.getCurrent
         });
         __slider['main'] = $mainSlider.data('owlCarousel');
+    }
+};
+
+
+
+
+
+/*
+* Function will handle navigation arrows for sliders
+* @param s object
+* @param $arrow DOMElement
+* */
+arcadeStyle.SliderNavigate = function(s, $arrow){
+    if( $arrow.length > 0 ){
+
+        if( $arrow.hasClass('next') || $arrow.hasClass('__next') ){
+            if(s.currentItem == s.$owlItems.length){
+                s.goTo(0);
+            }else{
+                s.goTo(++s.currentItem);
+            }
+        }
+
+        if( $arrow.hasClass('prev') || $arrow.hasClass('__prev') ){
+            if(s.currentItem == 0){
+                s.goTo(s.$owlItems.length);
+            }else{
+                s.goTo(--s.currentItem);
+            }
+        }
     }
 };
 
@@ -260,6 +294,12 @@ arcadeStyle.listenEvents = function(){
                     //input.focus();
                 }, 500);
             }
+        })
+
+        .on('click', '.__slider--arrow', function(e){
+            e.preventDefault();e.stopPropagation();
+
+            arcadeStyle.SliderNavigate(__slider['main'], $(this));
         })
     ;
 
