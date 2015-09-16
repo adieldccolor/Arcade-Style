@@ -209,23 +209,47 @@ FEATURED PRODUCTS
   background-color: #F5F3F0;
   padding: 53px 0 80px;
 
+
+  @include mq('mobile'){
+    padding-bottom: 50px;
+  }
+
+  @include mq('large-standard'){
+    .container {
+      width: 1254px;
+    }
+  }
+
   .divider{
     max-width: 200px;
     margin: 80px auto;
 
     @include mq('mobile'){
-      max-width: 100%;
+      margin: 45px auto;
     }
   }
 
 
   .__featured--single{
 
+
+    @include mq('xx-mobile-min'){
+      [class*="col-"]{
+        padding-left: 35px;
+        padding-right: 35px;
+      }
+    }
+
     @include mq('small-min'){
       [class*="col-"]{
-        padding-left: 74px;
-        padding-right: 74px;
+        padding-left: 60px;
+        padding-right: 60px;
       }
+    }
+
+
+    @include mq('mobile'){
+      text-align: center;
     }
 
     .__featured--image{
@@ -235,6 +259,27 @@ FEATURED PRODUCTS
     .__feature--link{
       margin-top: 8px;
     }
+
+
+
+    &.__feature--image-left{
+      .__feature--text-wrapper{
+        @include mq('medium-min'){
+          padding-left: 20px;
+        }
+      }
+    }
+
+    &.__feature--image-right{
+      .__feature--text-wrapper{
+        @include mq('medium-min'){
+          padding-right: 20px;
+        }
+      }
+    }
+
+
+
   }
 
 }
@@ -250,6 +295,10 @@ CUSTOMIZED SOLUTION
 
   @include mq('mobile'){
     padding: 58px 0 76px;
+  }
+
+  @include mq('x-mobile'){
+    padding: 43px 0 76px;
   }
 
   .container{
@@ -269,9 +318,6 @@ CUSTOMIZED SOLUTION
     .__cta--button{
       .button{
         width: 210px;
-        @include mq('x-mobile'){
-          width: auto;
-        }
       }
     }
 

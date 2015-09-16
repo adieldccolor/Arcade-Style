@@ -11,8 +11,23 @@
 * @var object arcadeStyle: contains all website functionality api
 * @var array __timers: this will store all timers for delayed actions
 * @var array __slider: this will store all the slider to have multiple instances
+* @var object __screen: this will contains screen specific validations and shorthands
 * */
-var arcadeStyle = {}, __timers = [], __slider = [];
+var arcadeStyle = {}, __timers = [], __slider = [], __screen = {};
+
+
+
+/*
+* Function will check if screen is mobile (only checks if window size is less than 768
+* @return bool
+* */
+__screen.__small = function(){
+    return window.innerWidth < 768;
+};
+
+
+
+
 
 
 /*
@@ -89,20 +104,96 @@ arcadeStyle.StickyItems = function(){
 * @return
 * */
 arcadeStyle.Sliders = function(){
-    __slider['main'] = $(".__main--slider");
-    __slider['main'].owlCarousel({
-        // autoPlay: -1, //Set AutoPlay to 3 seconds
-        items : 1,
-        itemsDesktop : [1199,1],
-        itemsDesktopSmall : [979,1],
-        itemsTablet : [768,1],
-        itemsMobile : [480,1],
-        autoHeight : true,
-        slideSpeed: 800,
-        //responsiveRefreshRate: 200,
-        //afterAction: app.getCurrent
-    });
-    __slider['main'] = $(".__main--slider").data('owlCarousel');
+    var $mainSlider = $(".__main--slider");
+
+    __slider['main'] = $mainSlider;
+    if( __slider['main'].length > 0 ){
+        __slider['main'].owlCarousel({
+            // autoPlay: -1, //Set AutoPlay to 3 seconds
+            items : 1,
+            itemsDesktop : [1199,1],
+            itemsDesktopSmall : [979,1],
+            itemsTablet : [768,1],
+            itemsMobile : [480,1],
+            autoHeight : true,
+            slideSpeed: 800,
+            //responsiveRefreshRate: 200,
+            //afterAction: app.getCurrent
+        });
+        __slider['main'] = $mainSlider.data('owlCarousel');
+    }
+};
+
+
+
+
+/*
+* Function will handle vertical-align columns
+* */
+arcadeStyle.VerticalAlign = function(){
+    var $columns = $('.__featured--single');
+
+    function v_align(){
+        if( $columns.length > 0 ){
+            $columns.each(function(){
+                var $cur = $(this),
+                    $left = $cur.children('div').eq(0),
+                    $right = $cur.children('div').eq(1),
+                    leftHeight = $left.outerHeight(),
+                    rightHeight = $right.outerHeight();
+
+                if( leftHeight > rightHeight && !__screen.__small() ){
+                    var total = ( leftHeight - rightHeight ) / 2;
+                    $right.children().css({ marginTop: total });
+                }
+
+                if( leftHeight < rightHeight && !__screen.__small() ){
+                    var total = ( rightHeight - leftHeight ) / 2;
+                    $left.children().css({ marginTop: total });
+                }
+
+
+                if( __screen.__small() ){
+                    $left.children().css({ marginTop: 0 });
+                    $right.children().css({ marginTop: 0 });
+                }
+            });
+        }
+    }
+
+    v_align();
+    arcadeStyle.addResizeQueue(v_align);
+};
+
+
+
+
+
+/*
+* Function will store queue for window resize
+* @return number -1
+* */
+arcadeStyle.RunResizeQueueStored = function(){ return -1; };
+
+/*
+* Function will queue new functions for window resize on the fly
+* @param function fn
+* */
+arcadeStyle.addResizeQueue = function(fn){
+    var old = function(){};
+    if( this.RunResizeQueueStored() != -1 ){
+        old = this.RunResizeQueueStored();
+    }
+
+    if( fn != undefined ){
+        this.RunResizeQueueStored = function(){
+            old();
+
+            fn();
+        };
+    }else{
+        throw Error('Function expected passed as parameter.');
+    }
 };
 
 
@@ -119,6 +210,7 @@ arcadeStyle.start = function(){
     this.ArcadeUISelect();
     this.StickyItems();
     this.Sliders();
+    this.VerticalAlign();
 
 
 
@@ -131,6 +223,7 @@ arcadeStyle.start = function(){
 * @return
 * */
 arcadeStyle.listenEvents = function(){
+
     $('body').on('click', '.menu-button', function(){
         var $drawer = $('.drawer');
 
@@ -169,6 +262,13 @@ arcadeStyle.listenEvents = function(){
             }
         })
     ;
+
+
+
+
+    $(window).on('resize', function(){
+        arcadeStyle.RunResizeQueueStored();
+    });
 };
 
 

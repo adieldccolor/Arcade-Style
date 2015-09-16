@@ -42,6 +42,10 @@ nav.__navigation, .__navigation{
     width: 100%;
     max-width: 100%;
     padding: 0 23px;
+
+    @include mq('x-mobile'){
+      padding-left: 10px;
+    }
   }
 
 
