@@ -104,6 +104,14 @@ nav.__navigation, .__navigation{
         height: 40px;
         font-size: 10px;
 
+        @include mq('mobile'){
+          margin-left: 16px;
+        }
+
+        &:first-child{
+          margin-left: 0;
+        }
+
         &.nav-divider{
           height: 50px;
           margin: -5px 0px -5px 30px;
@@ -436,7 +444,7 @@ nav.__navigation, .__navigation{
 **** NAVIGATION DRAWER
 *****************************************
 */
-.drawer-arcade-style{
+.drawer-arcade-style, .drawer-right .drawer-main, .drawer-right .drawer-main.drawer-arcade-style{
   border-left: 1px solid #DFDFDF;
   background-color: #fff;
   width: 100%;
@@ -449,6 +457,7 @@ nav.__navigation, .__navigation{
   .__navigation, .__drawer-navigation{
     border: none;
     padding: 0 25px 0 40px;
+    display: none;
 
     &.__cloned{
       right: 0;
@@ -599,6 +608,13 @@ nav.__navigation, .__navigation{
       }
     }
 
+  }
+}
+
+
+.drawer-open .drawer-arcade-style, .drawer-right.drawer-open .drawer-main, .drawer-right.drawer-open .drawer-main.drawer-arcade-style{
+  .__navigation, .__drawer-navigation {
+    display: block;
   }
 }
 

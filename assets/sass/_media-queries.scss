@@ -4,6 +4,7 @@ $breakpoints: (
 'x-mobile'  : screen and ( max-width: 480px ),
 'x-mobile-min'  : screen and ( min-width: 481px ),
 'mobile'  : screen and ( max-width: 767px ),
+'mobile-max'  : screen and ( max-width: 768px ),
 'mobile-min'  : screen and ( min-width: 768px ),
 'small' : screen and ( max-width: 992px ),
 'small-min' : screen and ( min-width: 993px ),
@@ -11,6 +12,7 @@ $breakpoints: (
 'medium-min'  : screen and ( min-width: 1200px ),
 'large'  : screen and ( min-width: 1201px ),
 'large-standard'  : screen and ( min-width: 1366px ),
+'large-standard-down'  : screen and ( max-width: 1366px )
 );
 
 @mixin mq($name) {

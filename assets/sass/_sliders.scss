@@ -22,27 +22,45 @@ MAIN SLIDER
     height: $slider-height - 80;
   }
 
+  @include mq('mobile'){
+    height: $slider-height - 175;
+  }
+
+
+
   .__slide-item{
     background: #f2f2f2 center top no-repeat;
     height: $slider-height;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+
+    @include mq('large-standard-down'){
+      -webkit-background-size: inherit;
+      background-size: inherit;
+    }
 
     @include mq('small'){
       height: $slider-height - 80;
     }
 
-    @include mq('large-standard'){
-      //background-position: top right;
-      -webkit-background-size: cover;
-      background-size: cover;
+    @include mq('mobile'){
+      height: $slider-height - 175;
+    }
+
+
+
+    @include mq('mobile'){
+      background-image: none !important;
+      text-align: center;
     }
 
 
     .container{
-      position: relative;
       height: 100%;
 
-      @include mq('small'){
-        position: static;
+      @include mq('medium-min'){
+        position: relative;
       }
 
       @include mq('large-standard'){
@@ -88,6 +106,7 @@ MAIN SLIDER
           background-color: #fff;
           opacity: 0.4;
           z-index: 1;
+          left: 0;
         }
 
         .__arrow--icon{
@@ -116,25 +135,34 @@ MAIN SLIDER
 
 
       .__slider--content{
-        padding-top: 115px - 32;
-        margin: 0 0 0 120px;
+        margin: 0 120px;
+
+        -webkit-transition: padding 0.2s;
+        -moz-transition: padding 0.2s;
+        -ms-transition: padding 0.2s;
+        -o-transition: padding 0.2s;
+        transition: padding 0.2s;
 
         @include mq('small'){
-          margin: 0 0 0 80px;
+          margin: 0 92px;
         }
 
+        @include mq('mobile-max'){
+          margin: 0 60px;
+        }
+
+        @include mq('mobile'){
+          margin: 0 23px;
+          padding-top: 26px;
+        }
+
+
+
         .__slider--content-wrapper{
+          width: 50%;
 
-          @include mq('medium-min'){
-            width: 45%;
-          }
-
-          @include mq('medium'){
-            width: 50%;
-          }
-
-          @include mq('small'){
-            width: 60%;
+          h1, .h1{
+            margin-top: 0;
           }
 
 
@@ -148,9 +176,53 @@ MAIN SLIDER
           .__cta-buttons{
             margin-top: 13px;
 
+            @include mq('small'){
+              width: 120%;
+            }
+
+            @include mq('mobile'){
+              width: auto;
+              margin: 0 -23px;
+            }
+
+
             a, a.button{
               width: 150px;
               margin-right: 27px;
+
+              @include mq('medium'){
+                margin-right: 17px;
+              }
+
+              @include mq('small'){
+                margin-right: 7px;
+              }
+
+              @media screen and (max-width: 800px){
+                width: 138px;
+              }
+
+              @include mq('mobile'){
+                margin-right: 22px;
+              }
+
+              @include mq('x-mobile'){
+                margin-right: 17px;
+              }
+
+              @include mq('xx-mobile'){
+                margin-right: 7px;
+                width: 120px;
+              }
+
+
+
+
+
+              &:last-child{
+                margin-right: 0;
+              }
+
             }
           }
 

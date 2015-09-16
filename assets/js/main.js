@@ -27,6 +27,18 @@ __screen.__small = function(){
 
 
 
+/*
+* Function to execute tasks with a small delay
+* @param fn function
+* @param time number
+* */
+function delayed(fn, time, name){
+    if( __timers[name] != undefined ){
+        clearTimeout(__timers[name]);
+    }
+    __timers[name] = setTimeout(function(){ fn(); }, time);
+}
+
 
 
 
@@ -188,15 +200,49 @@ arcadeStyle.VerticalAlign = function(){
 
 
                 if( __screen.__small() ){
-                    $left.children().css({ marginTop: 0 });
-                    $right.children().css({ marginTop: 0 });
+                    $left.children().css({ marginTop: 'auto' });
+                    $right.children().css({ marginTop: 'auto' });
                 }
             });
         }
     }
 
-    v_align();
+
+    function v_align_mainSlider(){
+        var $slider = $('.__main--slider'),
+            $sliderItems = $slider.find('.__slide-item')
+
+        $sliderItems.each(function(){
+            var $curItem = $(this),
+                thisHeight = $curItem.outerHeight(),
+                $content = $curItem.find('.__slider--content'),
+                contentHeight = $content.outerHeight();
+
+
+            if( !__screen.__small() ){
+                var total = ( thisHeight - contentHeight ) / 2;
+                $content.css({ paddingTop: total });
+            }
+
+
+            if( __screen.__small() ){
+                var total = thisHeight - contentHeight,
+                    hasImage = $content.find('img').length > 0,
+                    $image = hasImage ? $content.find('img') : $('<img />');
+
+                if( hasImage ){
+                    total = (total - $image.outerHeight() ) / 2;
+                }else{
+                    total = total / 2;
+                }
+
+                $content.css({ paddingTop: total });
+            }
+        });
+    }
+
     arcadeStyle.addResizeQueue(v_align);
+    arcadeStyle.addResizeQueue(v_align_mainSlider);
 };
 
 
@@ -216,7 +262,7 @@ arcadeStyle.RunResizeQueueStored = function(){ return -1; };
 arcadeStyle.addResizeQueue = function(fn){
     var old = function(){};
     if( this.RunResizeQueueStored() != -1 ){
-        old = this.RunResizeQueueStored();
+        old = this.RunResizeQueueStored;
     }
 
     if( fn != undefined ){
@@ -307,8 +353,13 @@ arcadeStyle.listenEvents = function(){
 
 
     $(window).on('resize', function(){
+        delayed(arcadeStyle.RunResizeQueueStored, 100, 'valign');
+    });
+
+    $(window).on('load', function(){
         arcadeStyle.RunResizeQueueStored();
     });
+
 };
 
 
